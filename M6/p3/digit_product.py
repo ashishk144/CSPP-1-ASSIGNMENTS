@@ -15,6 +15,7 @@ def main():
     else:
         if int_input < 0:
             int_input = int_input * -1
+            p_d = -1
         else:
             pass
         while int_input > 0:
