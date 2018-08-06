@@ -30,20 +30,20 @@ Updated balance each month = (Monthly unpaid balance) +
 (Monthly interest rate x Monthly unpaid balance)
 """
 
-def payingDebtOffInAYear(bal_ance, annual_InterestRate, monthly_PaymentRate):
+def paying_debtoffinayear(bal_ance, annual_interestrate, monthly_paymentrate):
     """Defining paying debt function"""
     ba_l = bal_ance
     for _ in range(12):
-        pa_y = ba_l*monthly_PaymentRate
+        pa_y = ba_l*monthly_paymentrate
         u_bal = ba_l - pa_y
-        ba_l = u_bal + ((annual_InterestRate/12.0)*u_bal)
-    return(round(ba_l,2))
+        ba_l = u_bal + ((annual_interestrate / 12.0) * u_bal)
+    return(round(ba_l, 2))
 
 def main():
     data = input()
     data = data.split(' ')
     data = list(map(float, data))
-    print("Remaining balance: " +str(payingDebtOffInAYear(data[0],data[1],data[2])))
+    print("Remaining balance: " +str(paying_debtoffinayear(data[0], data[1], data[2])))
 
 if __name__ == "__main__":
     main()
