@@ -37,9 +37,10 @@ def paying_debtoffinayear(bal_ance, annual_interestrate, monthly_paymentrate):
         pa_y = ba_l*monthly_paymentrate
         u_bal = ba_l - pa_y
         ba_l = u_bal + ((annual_interestrate / 12.0) * u_bal)
-    return(round(ba_l, 2))
+    return round(ba_l, 2)
 
 def main():
+    """Defining main function"""
     data = input()
     data = data.split(' ')
     data = list(map(float, data))
