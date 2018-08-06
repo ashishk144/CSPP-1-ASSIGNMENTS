@@ -18,6 +18,7 @@ def paying_debtoffinayear(bal_ance, annual_interestrate):
         elif ba_l < -epsi_lon:
             high_pay = pa_y
         else:
+            print(pa_y)
             return round(pa_y, 2)
         pa_y = (high_pay + low_pay)/2
 def main():
