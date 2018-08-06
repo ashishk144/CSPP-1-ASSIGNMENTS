@@ -30,8 +30,9 @@ Updated balance each month = (Monthly unpaid balance) +
 """
 
 def paying_debtoffinayear(bal_ance, annual_interestrate):
+    """defining paying function"""
     ba_l = bal_ance
-    pa_y = 10
+    pa_y = 0
     while True:
         i = 12
         ba_l = bal_ance
