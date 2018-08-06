@@ -1,3 +1,4 @@
+"""payin debt bi-section"""
 def paying_debtoffinayear(bal_ance, annual_interestrate):
     """defining paying function"""
     ba_l = bal_ance
