@@ -22,7 +22,6 @@ def paying_debtoffinayear(bal_ance, annual_interestrate):
 def main():
     """defining main"""
     data = input()
-    # data = "4773 0.2"
     data = data.split(' ')
     data = list(map(float, data))
     print("Lowest Payment: " +str(paying_debtoffinayear(data[0], data[1])))
