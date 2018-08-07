@@ -12,11 +12,11 @@ def sumofdigits(num_ber):
     returns: a positive integer, the sum of digits of num_ber.
     '''
     if num_ber == 0:
-    	return 0
+        return 0
     return (num_ber % 10) + sumofdigits(num_ber // 10)
 
 def main():
-	"""defining main"""
+    """defining main"""
     in_put = input()
     print(sumofdigits(int(in_put)))  
 
