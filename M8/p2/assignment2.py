@@ -8,7 +8,6 @@ This function takes in one number and returns one number.
 def sumofdigits(num_ber):
     '''
     num_ber is positive Integer
-
     returns: a positive integer, the sum of digits of num_ber.
     '''
     if num_ber == 0:
@@ -18,8 +17,7 @@ def sumofdigits(num_ber):
 def main():
     """defining main"""
     in_put = input()
-    print(sumofdigits(int(in_put)))  
+    print(sumofdigits(int(in_put)))
 
 if __name__ == "__main__":
     main()
-
