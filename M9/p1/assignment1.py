@@ -44,3 +44,13 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+    """ s = secret_word
+    l = list of guessed words
+    for i in l:
+        if i in s:
+            s = s.replace(i, "")
+    if s == '':
+        return True
+    return False
+    """
