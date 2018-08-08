@@ -15,14 +15,14 @@ def is_word_guessed(secret_word, letters_guessed):
       False otherwise
     '''
     # FILL IN YOUR CODE HERE...
-    s = ['a']*len(secret_word)
+    compare_string = ['a']*len(secret_word)
     for [i, _] in enumerate(letters_guessed):
         for [j, _] in enumerate(secret_word):
             if letters_guessed[i] == secret_word[j]:
-                s[j] = secret_word[j]
+                compare_string[j] = secret_word[j]
     
-    s = ''.join(s)
-    if s == secret_word:
+    compare_string = ''.join(compare_string)
+    if compare_string == secret_word:
         return True
     return False
 
