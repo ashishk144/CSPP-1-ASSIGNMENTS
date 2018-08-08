@@ -22,7 +22,6 @@ def is_word_guessed(secret_word, letters_guessed):
                 s[j] = secret_word[j]
     
     s = ''.join(s)
-    print(s)
     if s == secret_word:
         return True
     return False
