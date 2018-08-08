@@ -17,7 +17,7 @@ def is_word_guessed(secret_word, letters_guessed):
     # FILL IN YOUR CODE HERE...
     s = []
     for i in range(0, 8):
-        for [i, _] in enumerate(secret_word):
+        for [j, _] in enumerate(secret_word):
             if letters_guessed == secret_word[j]:
                 s[j] = secret_word[j]
     ''.join(s)
