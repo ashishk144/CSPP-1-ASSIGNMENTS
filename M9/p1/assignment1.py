@@ -16,11 +16,11 @@ def is_word_guessed(secret_word, letters_guessed):
     '''
     # FILL IN YOUR CODE HERE...
     s = ''
-    for [i, ] in enumerate(secret_word):
-    	if letters_guessed == j:
-    		s = s + j
+    for [i, j] in enumerate(secret_word):
+        if letters_guessed == j:
+            s = s + j
     if s == secret_word:
-    	return True
+        return True
     return False
 
 def main():
