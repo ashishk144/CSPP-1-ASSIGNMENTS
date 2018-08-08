@@ -21,7 +21,7 @@ def get_guessed_word(secret_word, letters_guessed):
 
     compare_string = ''.join(compare_string)
     return compare_string
-    
+
 def main():
     '''
     Main function for current assignment
