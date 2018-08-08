@@ -4,6 +4,14 @@ First, implement the function isWordGuessed that takes in two parameters -
 a string, secret_word, and a list of letters, letters_guessed. This function
 returns a boolean - True if secret_word has been guessed (ie, all the letters of
 secret_word are in letters_guessed) and False otherwise.
+s = secret_word
+l = list of guessed words
+for i in l:
+    if i in s:
+        s = s.replace(i, "")
+if s == '':
+    return True
+return False
 '''
 
 
@@ -44,13 +52,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-    """ s = secret_word
-    l = list of guessed words
-    for i in l:
-        if i in s:
-            s = s.replace(i, "")
-    if s == '':
-        return True
-    return False
-    """
