@@ -15,7 +15,8 @@ def get_available_letters(letters_guessed):
     compare_string = 'abcdefghijklmnopqrstuvwxy'
     for ch_ar in letters_guessed:
         if ch_ar in compare_string:
-            compare_string = compare_string.remove(ch_ar)
+            compare_string = compare_string.replace(ch_ar,'')
+
     return compare_string
 
 def main():
