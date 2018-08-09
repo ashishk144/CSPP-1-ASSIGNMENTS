@@ -12,7 +12,9 @@ def get_available_letters(letters_guessed):
     returns: string, comprised of letters that represents what letters have not
       yet been guessed.
     '''
-    compare_string = 'abcdefghijklmnopqrstuvwxyz'
+    #compare_string = 'abcdefghijklmnopqrstuvwxyz'
+    import string
+    compare_string = string.ascii_lowercase()
     for ch_ar in letters_guessed:
         if ch_ar in compare_string:
             compare_string = compare_string.replace(ch_ar, '')
