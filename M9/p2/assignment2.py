@@ -4,6 +4,16 @@ Next, implement the function getGuessedWord that takes in two parameters
 a string, secret_word, and a list of letters, letters_guessed. This function
 returns a string that is comprised of letters and underscores, based on what
 letters in letters_guessed are in secret_word. This shouldn't be too different from isWordGuessed!
+guessed_word = secret_word
+for each_char in letters_guessed:
+if each_char in guessed_word:
+guessed_word = guessed_word.replace(each_char, "_")
+# print(guessed_word)
+for each_char in guessed_word:
+if each_char != "_":
+# print(secret_word)
+secret_word = secret_word.replace(each_char, "_")
+return secret_word
 '''
 def get_guessed_word(secret_word, letters_guessed):
     '''
