@@ -11,7 +11,7 @@ def calculate_handlen(hand_dict):
     hand: dictionary (string int)
     returns: integer
     """
-    return len(hand_dict.values())
+    return len(hand_dict.keys())
 
 
 def main():
