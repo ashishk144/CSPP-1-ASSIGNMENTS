@@ -6,7 +6,7 @@ which can be done in under five lines of code.
 """
 
 def calculate_handlen(hand_dict):
-    """ 
+    """
     Returns the length (number of letters) in the current hand.
     hand: dictionary (string int)
     returns: integer
@@ -15,13 +15,13 @@ def calculate_handlen(hand_dict):
 
 
 def main():
-	num_ber = input()
-	a_dict = {}
-	for _ in range(int(num_ber)):
-		data_input = input()
-		l_1 = data_input.split()
-		a_dict[l_1[0]] = int(l_1[1])
-	print(calculate_handlen(a_dict))
+    num_ber = input()
+    a_dict = {}
+    for _ in range(int(num_ber)):
+        data_input = input()
+        l_1 = data_input.split()
+        a_dict[l_1[0]] = int(l_1[1])
+    print(calculate_handlen(a_dict))
 
 if __name__ == "__main__":
-	main()
+    main()
