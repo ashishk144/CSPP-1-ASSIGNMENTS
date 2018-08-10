@@ -12,11 +12,12 @@ def calculate_handlen(hand_dict):
     returns: integer
     """
     sum_num = 0
-    for i in range(0,len(hand_dict)):
-        sum_num = sum_num + hand_dict[i][i]
+    for [i, j] in enumerate(hand_dict):
+        sum_num = sum_num + j
     return sum_num
 
 def main():
+    """input function"""
     num_ber = input()
     a_dict = {}
     for _ in range(int(num_ber)):
