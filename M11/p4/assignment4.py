@@ -20,7 +20,7 @@ def main():
 	for _ in range(int(num_ber)):
 		data_input = input()
 		l_1 = data_input.split()
-		a_dict[l[0]] = int(l[1])
+		a_dict[l_1[0]] = int(l_1[1])
 	print(calculate_handlen(a_dict))
 
 if __name__ == "__main__":
