@@ -28,8 +28,8 @@ def get_word_score(word_entered, len_gth):
         if char_acters in scrabble_letters:
             score += scrabble_letters[char_acters]
     if len(word_entered) == len_gth:
-        return score + 50
-    return score
+        return (score * len(word_entered)) + 50
+    return score*len(word_entered)
 
 def main():
     '''
