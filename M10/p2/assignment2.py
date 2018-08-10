@@ -144,7 +144,7 @@ def main():
     '''
     sec_word = choose_word(WORDSLIST).lower()
     hangman(sec_word)
-    #hangman("apple")
+    # hangman("apple")
 
 if __name__ == "__main__":
     main()
