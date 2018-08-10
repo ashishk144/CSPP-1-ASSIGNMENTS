@@ -13,6 +13,7 @@ def calculate_handlen(hand_dict):
     """
     sum_num = 0
     for [i, j] in enumerate(hand_dict):
+        j = str(j)
         sum_num = sum_num + j
     return sum_num
 
