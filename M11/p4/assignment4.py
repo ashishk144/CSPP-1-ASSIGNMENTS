@@ -12,7 +12,7 @@ def calculate_handlen(hand_dict):
     returns: integer
     """
     sum_num = 0
-    for i in len(hand_dict):
+    for i in range(0,len(hand_dict)):
         sum_num = sum_num + hand_dict[i][i]
     return sum_num
 
