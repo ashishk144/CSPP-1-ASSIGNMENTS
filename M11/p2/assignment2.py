@@ -31,8 +31,8 @@ def main():
     a_dict = {}
     for _ in range(int(in_put)):
         data = input()
-        l = data.split()
-        a_dict[l[0]] = int(l[1])
+        list_1 = data.split()
+        a_dict[list_1[0]] = int(list_1[1])
     data1 = input()
     print(update_hand(a_dict, data1))
 
