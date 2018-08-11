@@ -33,7 +33,7 @@ def create_social_network(inp_line):
     '''
 
     # remove the pass below and start writing your code
-    inp_line = inp_line.split("\n")
+    inp_line = inp_line.replace("\n",'')
     for i in inp_line:
         inp_line = inp_line.split(' follows ')
         net_dict[0] = net_dict[1].split(',') 
