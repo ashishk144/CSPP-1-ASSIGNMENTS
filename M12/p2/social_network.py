@@ -51,6 +51,7 @@ def main():
         i += 1
         line = input()
         output = line.split(" ")
+        print(output)
         if output[0] == "follow":
             network = follow(network, output[1], output[2])
         elif output[0] == "unfollow":
