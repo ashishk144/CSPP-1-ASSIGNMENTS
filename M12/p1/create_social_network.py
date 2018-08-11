@@ -36,7 +36,7 @@ def create_social_network(inp_line):
     inp_line = inp_line.replace("\n",'')
     for i in inp_line:
         inp_line = inp_line.split(' follows ')
-        net_dict[0] = net_dict[1].split(',') 
+        net_dict[i] = net_dict[1].split(',')
 
 def main():
     '''
