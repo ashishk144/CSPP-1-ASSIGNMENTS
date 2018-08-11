@@ -31,8 +31,8 @@ def unfollow(network, arg1, arg2):
     '''
     # remove the pass below and start writing your code
     if arg1 in network:
-        if arg2 in network[arg1] and isinstance(arg2,):
-            network[arg1].remove(arg2)
+        # if arg2 in network[arg1] and isinstance(arg2,):
+        network[arg1].remove(arg2)
     return network
 
 def delete_person(network, arg1):
@@ -47,8 +47,8 @@ def delete_person(network, arg1):
     '''
     # remove the pass below and start writing your code
     if arg1 in network:
-        #for key_s in network:
-            #unfollow(network, key_s, arg1)
+        for key_s in network:
+            unfollow(network, key_s, arg1)
         del network[arg1]
     return network
 
