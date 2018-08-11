@@ -33,11 +33,12 @@ def create_social_network(inp_line):
     '''
     list_1 = inp_line
     list_1 = list_1.split("\n")
-    list_2 = {}
+    i = 2
     for set_list in list_1:
-        if isinstance(set_list, str):
-            set_list = set_list.replace(' follows ', ',')
-    print (list_1)
+        list_i = set_list
+        i += 1
+        print(list_i)
+
 
 def main():
     '''
