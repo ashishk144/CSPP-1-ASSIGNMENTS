@@ -46,6 +46,10 @@ def delete_person(network, arg1):
         update the network dictionary and return it
     '''
     # remove the pass below and start writing your code
+    if arg1 in network:
+        for key_s in network:
+            unfollow(network,key_s,arg1)
+        network = del network[arg1]
     return network
 
 def main():
