@@ -50,6 +50,7 @@ def main():
     for i in range(lines):
         i += 1
         line = input()
+        print(line)
         output = line.split(" ")
         print(output)
         if output[0] == "follow":
