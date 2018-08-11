@@ -1,7 +1,6 @@
 '''
     Assignment-1 Create Social Network
 '''
-net_dict = {}
 def create_social_network(inp_line):
     '''
     The data argument passed to the function is a string
@@ -33,6 +32,7 @@ def create_social_network(inp_line):
     '''
     list_1 = inp_line
     list_1 = list_1.split("\n")
+    net_dict ={}*len(inp_line)
     i = 2
     for set_list in list_1:
         list_i = set_list
