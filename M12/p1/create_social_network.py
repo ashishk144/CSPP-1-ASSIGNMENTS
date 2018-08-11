@@ -31,12 +31,11 @@ def create_social_network(inp_line):
     Return a empty dictionary if the string format of the data is invalid
     Empty dictionary is not None, it is a dictionary with no keys
     '''
-
-    # remove the pass below and start writing your code
-    # inp_line = inp_line.replace("\n",'')
-    # for i in inp_line:
-    #     inp_line = inp_line.split(' follows ')
-    #     net_dict[i] = net_dict[1].split(',')
+    while inp_line:
+        inp_line = inp_line.readline()
+        inp_line = replace("\n","")
+        net_dict[inp_line[0]] = inp_line[1].split(",")
+    print(net_dict)
 
 def main():
     '''
