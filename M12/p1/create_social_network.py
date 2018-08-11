@@ -37,7 +37,9 @@ def create_social_network(inp_line):
     for set_list in list_1:
         list_i = set_list
         i += 1
-        print(list_i)
+        list_i = list_i.split(' follows ')
+        net_dict[list_i[0]] = list_i[1].split(',')
+    return net_dict
 
 
 def main():
@@ -50,7 +52,6 @@ def main():
         i += 1
         store_string += input()
         store_string += '\n'
-    print(store_string)
     print(create_social_network(store_string))
 
 if __name__ == "__main__":
