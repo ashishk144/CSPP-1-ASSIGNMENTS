@@ -49,7 +49,7 @@ def delete_person(network, arg1):
     if arg1 in network:
         for key_s in network:
             unfollow(network,key_s,arg1)
-        network = del network[arg1]
+        network = del(network[arg1])
     return network
 
 def main():
