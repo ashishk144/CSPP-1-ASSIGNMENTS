@@ -36,7 +36,7 @@ def create_social_network(inp_line):
     list_2 = []
     print(list_1)
     for [i, j] in enumerate(list_1):
-        list_1[i] = j.split(' follows ')
+        list_1[i] = list_1[i].split(' follows ')
         list_2 = list_2.append(j)
     print(list_2)
 def main():
