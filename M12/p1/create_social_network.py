@@ -36,7 +36,7 @@ def create_social_network(inp_line):
     list_2 = {}
     print(list_1)
     for [i, j] in enumerate(list_1):
-        j = j.split(' follows ')
+        j = j.replace(' follows '," ")
         net_dict[i] = j.split(',')
     print(net_dict)
 def main():
