@@ -33,10 +33,10 @@ def create_social_network(inp_line):
     '''
 
     # remove the pass below and start writing your code
-    inp_line = inp_line.replace("\n",'')
-    for i in inp_line:
-        inp_line = inp_line.split(' follows ')
-        net_dict[i] = net_dict[1].split(',')
+    # inp_line = inp_line.replace("\n",'')
+    # for i in inp_line:
+    #     inp_line = inp_line.split(' follows ')
+    #     net_dict[i] = net_dict[1].split(',')
 
 def main():
     '''
@@ -48,7 +48,7 @@ def main():
         i += 1
         store_string += input()
         store_string += '\n'
-
+    print(store_string)
     print(create_social_network(store_string))
 
 if __name__ == "__main__":
