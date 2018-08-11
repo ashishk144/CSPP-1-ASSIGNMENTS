@@ -40,6 +40,7 @@ def create_social_network(inp_line):
         if list_i != '':
             list_i = list_i.split(' follows ')
             print(list_i)
+            net_dict[list_i[0]] = list_i[1].split(',')
     return net_dict
 
 
