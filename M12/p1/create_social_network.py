@@ -33,12 +33,12 @@ def create_social_network(inp_line):
     '''
     list_1 = inp_line
     list_1 = list_1.split("\n")
-    list_2 = []
+    list_2 = {}
     print(list_1)
     for [i, j] in enumerate(list_1):
-        list_1[i] = list_1[i].split(' follow ')
-        list_2 = list_2.append(list_1[i])
-    print(list_2)
+        list_1[i] = list_1[i].split(' follows ')
+        net_dict[i] = j.split(',')
+    print(net_dict)
 def main():
     '''
         handling testcase input and printing output
