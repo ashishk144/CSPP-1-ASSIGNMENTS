@@ -31,8 +31,9 @@ def unfollow(network, arg1, arg2):
         update the network dictionary and return it
     '''
     # remove the pass below and start writing your code
+    if arg1 in network:
+        network[arg1] = network[arg1].remove(arg2)
     return network
-    
 
 def delete_person(network, arg1):
     '''
@@ -56,9 +57,9 @@ def main():
     for i in range(lines):
         i += 1
         line = input()
-        print(line)
+        #print(line)
         output = line.split(" ")
-        print(output)
+        #print(output)
         if output[0] == "follow":
             network = follow(network, output[1], output[2])
         elif output[0] == "unfollow":
