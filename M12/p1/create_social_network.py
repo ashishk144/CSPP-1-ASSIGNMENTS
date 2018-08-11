@@ -34,11 +34,11 @@ def create_social_network(inp_line):
     list_1 = inp_line
     list_1 = list_1.split("\n")
     list_2 = {}
-    print(list_1)
-    for [i, j] in enumerate(list_1):
-        j = j.replace(' follows '," ")
-        net_dict[i] = j.split(',')
-    print(net_dict)
+    for set_list in list_1:
+        if isinstance(set_list, str):
+            set_list = set_list.replace(' follows ', ',')
+    print (list_1)
+
 def main():
     '''
         handling testcase input and printing output
