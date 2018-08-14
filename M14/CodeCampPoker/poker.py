@@ -36,10 +36,10 @@ def is_straight(hand):
     if temp_hand[-1] == 'A' and temp_hand[0]+temp_hand[1]+temp_hand[2]+temp_hand[3] == '2345':
         temp_hand = ['1', '2', '3', '4', '5']
     for i in range(len(temp_hand)-1):
-        print(i)
+        # print(i)
         #print(temp_hand[i+1],temp_hand[i],card_value(temp_hand[i+1]) - card_value(temp_hand[i]))
         if (card_value(temp_hand[i+1]) - card_value(temp_hand[i])) != 1:
-            print("fail")
+            # print("fail")
             return False
     return True
 
