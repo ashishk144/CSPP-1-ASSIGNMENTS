@@ -1,18 +1,21 @@
 def ranks(hand):
-    return sorted(['--23456789TJQKA'.index(c) for c,s in hand], reverse = True)
+    '''Sorting rank function'''
+    return sorted(['--23456789TJQKA'.index(c) for c, s in hand], reverse=True)
 
 def is_straight(rank):
+    '''is straight function'''
     if rank == [14, 5, 4, 3, 2]:
         return True
     return len(set(rank)) == 5 and max(rank)-min(rank) == 4
 
 def is_flush(hand):
+    '''is flush function'''
     return len(set(s for c,s in hand)) == 1
 
-def kind_of(ranks, n):
-    for r in ranks:
-        if ranks.count(r) == n:
-            return r
+def kind_of(ranks, num_ofcard):
+    for r_rank in ranks:
+        if ranks.count(r_rank) == num_ofcard:
+            return r_rank
     return False
 
 def hand_rank(hand):
@@ -54,7 +57,8 @@ def hand_rank(hand):
         return (5, hand_val)
     if kind_of(hand_val, 3):
         return (4, kind_of(hand_val, 3), hand_val)
-    if kind_of(hand_val, 2) and kind_of(hand_val[::-1], 2) and kind_of(hand_val, 2) != kind_of(hand_val[::-1], 2):
+    if kind_of(hand_val, 2) and kind_of(hand_val[::-1], 2) and kind_of(hand_val, 2) != \
+    kind_of(hand_val[::-1], 2):
         return (3, kind_of(hand_val, 2), kind_of(hand_val[::-1], 2))
     if kind_of(hand_val, 2):
         return (2, kind_of(hand_val, 2))
