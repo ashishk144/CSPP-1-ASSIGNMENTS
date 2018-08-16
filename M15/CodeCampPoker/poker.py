@@ -102,9 +102,10 @@ def hand_rank(hand):
     # max in poker function uses these return values to select the best hand
     new_list = []
     face_value = '--23456789TJQKA'
-    for c_l,s_l in hand:
-        new_list.append(face_value.index(c))
+    for c_l, _ in hand:
+        new_list.append(face_value.index(c_l))
     temp_hand = sorted(new_list)
+    
     if is_straight(temp_hand) and is_flush(temp_hand):
         return 9
     if four_ofakind(temp_hand):
