@@ -46,26 +46,19 @@ def hand_rank(hand):
     # max in poker function uses these return values to select the best hand
 
     hand_val = ranks(hand)
-
-    if is_straight(hand_val) and is_flush(hand):
-        return (9, hand_val)
-    elif kind_of(hand_val, 4):
-        return (8, kind_of(hand_val, 4), hand_val)
-    elif kind_of(hand_val, 3) and kind_of(hand_val, 2):
-        return (7, kind_of(hand_val, 3), kind_of(hand_val, 3))
-    elif is_flush(hand):
-        return (6, hand_val)
-    elif is_straight(hand_val):
-        return (5, hand_val)
-    elif kind_of(hand_val, 3):
-        return (4, kind_of(hand_val, 3), hand_val)
-    elif kind_of(hand_val, 2) and kind_of(hand_val[::-1], 2) and kind_of(hand_val, 2) != \
-    kind_of(hand_val[::-1], 2):
-        return (3, kind_of(hand_val, 2), kind_of(hand_val[::-1], 2))
-    elif kind_of(hand_val, 2):
-        return (2, kind_of(hand_val, 2))
-    #if high_hand()
-    return (1, hand_val)
+    return(
+    (9, hand_val) if is_straight(hand_val) and is_flush(hand) else
+    (8, kind_of(hand_val, 4), hand_val) if kind_of(hand_val, 4) else
+    (7, kind_of(hand_val, 3), kind_of(hand_val, 3))\
+    if kind_of(hand_val, 3) and kind_of(hand_val, 2) else
+    (6, hand_val) if is_flush(hand) else
+    (5, hand_val) if is_straight(hand_val) else
+    (4, kind_of(hand_val, 3), hand_val) if kind_of(hand_val, 3) else
+    (3, kind_of(hand_val, 2), kind_of(hand_val[::-1], 2))\
+    if kind_of(hand_val, 2) and kind_of(hand_val[::-1], 2) and kind_of(hand_val, 2) != \
+    kind_of(hand_val[::-1], 2) else
+    (2, kind_of(hand_val, 2)) if kind_of(hand_val, 2) else
+    (1, hand_val))
 
 def poker(hands):
     '''
