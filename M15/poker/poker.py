@@ -55,7 +55,7 @@ def two_pair(hand):
 def one_pair(hand):
     pair_dict = get_frequency(hand)
     for each_key in hand:
-        if two_dict[each_key] == 1:
+        if pair_dict[each_key] == 1:
             pair_count += 1
     if pair_count == 1:
         return True
