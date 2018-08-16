@@ -45,6 +45,7 @@ def is_three(hand_in):
             return True
     return False
 def two_pair(hand):
+    '''Finds whether hand is 2 pair'''
     two_dict = get_frequency(hand)
     pair_count = 0
     for each_key in hand:
