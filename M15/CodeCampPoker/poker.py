@@ -57,6 +57,7 @@ def two_pair(hand):
     if pair_count == 2:
         return True
     return False
+
 def one_pair(hand):
     '''Find a pair of hand'''
     pair_dict = get_frequency(hand)
@@ -82,6 +83,9 @@ def is_flush(hand):
         suit_set.add(each_card[1])
     # print(suit_set == 1)
     return len(suit_set) == 1
+def high_hand(hand):
+    '''high hand'''
+    return hand[-1]
 
 def hand_rank(hand):
     '''
@@ -114,38 +118,39 @@ def hand_rank(hand):
     # print(new_list)
     temp_hand = sorted(new_list)
     if is_straight(temp_hand) and is_flush(hand):
-        return 9
+        return 9 * maxi_mum(temp_hand)
     if four_ofakind(temp_hand):
-        return 8
+        return 8 * maxi_mum(temp_hand)
     if is_three(temp_hand) and one_pair(temp_hand):
-        return 7
+        return 7 * maxi_mum(temp_hand)
     if is_flush(hand):
-        return 6
+        return 6 * maxi_mum(temp_hand)
     if is_straight(temp_hand):
-        return 5
+        return 5 * maxi_mum(temp_hand)
     if is_three(temp_hand):
-        return 4
+        return 4 * maxi_mum(temp_hand)
     if two_pair(temp_hand):
-        return 3
+        return 3 * maxi_mum(temp_hand)
     if one_pair(temp_hand):
-        return 2
-    #if high_hand()
-    return 1
+        return 2 * maxi_mum(temp_hand)
+    #if high_hand(temp_hand):
+    return 1 * maxi_mum(temp_hand)
 
-# def maxi_mum(hand):
-#     rank_dict = {}
-#     if hand_rank(hand) in rank_dict:
-#         rank_dict[hand_rank(hand)] = hand
-#     max_key = max(rank_dict.key())
-#     max_key_value = rank_dict[max_key].values()
-#     card_val = 0
-#     if len(max_key_value) > 1:
-#         for i in range(len(max_key_value) - 1):
-#             if max_key_value[i][0] > max_key_value[i+1][0]:
-#                 card_val = max_key_value[i][0]
-#             else:
-#                 card_val = max_key_value[i][0]
-#     return card_val
+def maxi_mum(handss):
+    #for han in handss
+    rank_dict = {}
+    if hand_rank(han) in rank_dict:
+        rank_dict[hand_rank(han)] = han
+    max_key = max(rank_dict.key())
+    max_key_value = rank_dict[max_key].values()
+    card_val = 0
+    if len(max_key_value) > 1:
+    for i in range(len(max_key_value) - 1):
+        if max_key_value[i][0] > max_key_value[i+1][0]:
+            card_val = max_key_value[i][0]
+        else:
+            card_val = max_key_value[i][0]
+    return card_val
 
 def poker(hands):
     '''
@@ -165,6 +170,14 @@ def poker(hands):
     # hand_rank is a function passed to max
     # hand_rank takes a hand and returns its rank
     # max uses the rank returned by hand_rank and returns the best hand
+    # for hand_s in hands
+    #     if hand_rank(hand_s) in rank_dict:
+    #         rank_dict[hand_rank(hand_s)] = had_sn
+    #         max_key = max(rank_dict.key())
+    #         max_key_value = rank_dict[max_key].values()
+    #         card_val = 0
+    #         if len(max_key_value) > 1:
+
     return max(hands, key=hand_rank)
 
 if __name__ == "__main__":
