@@ -45,7 +45,7 @@ def hand_rank(hand):
     if kind_of(rank, 4):
         return (8, rank)
     if kind_of(rank, 3) and kind_of(rank, 2):
-        return (7, rank)
+        return (7, kind_of(rank, 3), kind_of(rank, 3))
     if is_flush(hand):
         return (6, rank)
     if is_straight(rank):
