@@ -47,18 +47,18 @@ def hand_rank(hand):
 
     hand_val = ranks(hand)
     return(
-    (9, hand_val) if is_straight(hand_val) and is_flush(hand) else
-    (8, kind_of(hand_val, 4), hand_val) if kind_of(hand_val, 4) else
-    (7, kind_of(hand_val, 3), kind_of(hand_val, 3))\
-    if kind_of(hand_val, 3) and kind_of(hand_val, 2) else
-    (6, hand_val) if is_flush(hand) else
-    (5, hand_val) if is_straight(hand_val) else
-    (4, kind_of(hand_val, 3), hand_val) if kind_of(hand_val, 3) else
-    (3, kind_of(hand_val, 2), kind_of(hand_val[::-1], 2))\
-    if kind_of(hand_val, 2) and kind_of(hand_val[::-1], 2) and kind_of(hand_val, 2) != \
-    kind_of(hand_val[::-1], 2) else
-    (2, kind_of(hand_val, 2)) if kind_of(hand_val, 2) else
-    (1, hand_val))
+(9, hand_val) if is_straight(hand_val) and is_flush(hand) else
+(8, kind_of(hand_val, 4), hand_val) if kind_of(hand_val, 4) else
+(7, kind_of(hand_val, 3), kind_of(hand_val, 3))\
+if kind_of(hand_val, 3) and kind_of(hand_val, 2) else
+(6, hand_val) if is_flush(hand) else
+(5, hand_val) if is_straight(hand_val) else
+(4, kind_of(hand_val, 3), hand_val) if kind_of(hand_val, 3) else
+(3, kind_of(hand_val, 2), kind_of(hand_val[::-1], 2))\
+if kind_of(hand_val, 2) and kind_of(hand_val[::-1], 2) and kind_of(hand_val, 2) != \
+kind_of(hand_val[::-1], 2) else
+(2, kind_of(hand_val, 2)) if kind_of(hand_val, 2) else
+(1, hand_val))
 
 def poker(hands):
     '''
