@@ -106,13 +106,13 @@ def hand_rank(hand):
         new_list.append(face_value.index(c_l))
     print(new_list)
     temp_hand = sorted(new_list)
-    if is_straight(temp_hand) and is_flush(temp_hand):
+    if is_straight(temp_hand) and is_flush(hand):
         return 9
     if four_ofakind(temp_hand):
         return 8
     if is_three(temp_hand) and one_pair(temp_hand):
         return 7
-    if is_flush(temp_hand):
+    if is_flush(hand):
         return 6
     if is_straight(temp_hand):
         return 5
