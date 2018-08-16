@@ -23,7 +23,7 @@ def get_frequency(hand):
     hand_dict = {}
     for each_card in hand:
         if each_card in hand_dict:
-            hand_dict[each_card][0] += 1
+            hand_dict[each_card] += 1
         else:
             hand_dict[each_card] = 1
     return hand_dict
