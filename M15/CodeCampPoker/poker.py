@@ -2,6 +2,8 @@ def ranks(hand):
     return sorted(['--23456789TJQKA'.index(c) for c,s in hand], reverse = True)
 
 def is_straight(rank):
+    if rank == [14, 5, 4, 3, 2]:
+        return True
     return len(set(rank)) == 5 and max(rank)-min(rank) == 4
 
 def is_flush(hand):
@@ -38,26 +40,26 @@ def hand_rank(hand):
     # any other hand would be the fourth best with the return value 0
     # max in poker function uses these return values to select the best hand
 
-    rank = ranks(hand)
+    hand_val = ranks(hand)
 
-    if is_straight(rank) and is_flush(hand):
-        return (9, rank)
-    if kind_of(rank, 4):
-        return (8, rank)
-    if kind_of(rank, 3) and kind_of(rank, 2):
-        return (7, kind_of(rank, 3), kind_of(rank, 3))
+    if is_straight(hand_val) and is_flush(hand):
+        return (9, hand_val)
+    if kind_of(hand_val, 4):
+        return (8, kind_of(hand_val, 4), hand_val)
+    if kind_of(hand_val, 3) and kind_of(hand_val, 2):
+        return (7, kind_of(hand_val, 3), kind_of(hand_val, 3))
     if is_flush(hand):
-        return (6, rank)
-    if is_straight(rank):
-        return (5, rank)
-    if kind_of(rank, 3):
-        return (4, kind_of(rank, 3), rank)
-    if kind_of(rank, 2) and kind_of(rank[::-1], 2) and kind_of(rank, 2) != kind_of(rank[::-1], 2):
-        return (3, kind_of(rank, 2), kind_of(rank[::-1], 2))
-    if kind_of(rank, 2):
-        return (2, kind_of(rank, 2))
+        return (6, hand_val)
+    if is_straight(hand_val):
+        return (5, hand_val)
+    if kind_of(hand_val, 3):
+        return (4, kind_of(hand_val, 3), hand_val)
+    if kind_of(hand_val, 2) and kind_of(hand_val[::-1], 2) and kind_of(hand_val, 2) != kind_of(hand_val[::-1], 2):
+        return (3, kind_of(hand_val, 2), kind_of(hand_val[::-1], 2))
+    if kind_of(hand_val, 2):
+        return (2, kind_of(hand_val, 2))
     #if high_hand()
-    return (1, rank)
+    return (1, hand_val)
 
 def poker(hands):
     '''
