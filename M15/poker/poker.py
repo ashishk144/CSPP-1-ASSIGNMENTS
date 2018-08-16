@@ -13,9 +13,9 @@ def is_straight(hand):
         Think of an algorithm: given the card face value how to check if it a straight
         Write the code for it and return True if it is a straight else return False
     '''
-    set_list = set(new_list)
+    set_list = set(hand)
     # print(len(set_list), max(new_list)-min(new_list))
-    return len(set_list) == 5 and (max(new_list) - min(new_list)) == 4
+    return len(set_list) == 5 and (max(hand) - min(hand)) == 4
     # card_values = set(['--23456789TJQKA'.index(c) for c,s in hand])
     # print(card_values)
     # return len(card_values)==5 and (max(card_values)-min(card_values) == 4)
