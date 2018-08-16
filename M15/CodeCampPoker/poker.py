@@ -13,6 +13,7 @@ def is_straight(hand):
         Think of an algorithm: given the card face value how to check if it a straight
         Write the code for it and return True if it is a straight else return False
     '''
+    print(hand[0][0])
     if hand[0][0] == 2 and hand[1][0] == 3 and hand[2][0] == 4 and hand[3][0] == 5 \
     and hand[-1][0] == 14:
         hand[-1][0] = 1
