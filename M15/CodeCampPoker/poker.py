@@ -13,17 +13,18 @@ def is_straight(hand):
         Think of an algorithm: given the card face value how to check if it a straight
         Write the code for it and return True if it is a straight else return False
     '''
-    set_list = set(new_list)
+    set_list = set(hand)
     # print(len(set_list), max(new_list)-min(new_list))
-    return len(set_list) == 5 and (max(new_list) - min(new_list)) == 4
+    return len(set_list) == 5 and (max(hand) - min(hand)) == 4
     # card_values = set(['--23456789TJQKA'.index(c) for c,s in hand])
     # print(card_values)
     # return len(card_values)==5 and (max(card_values)-min(card_values) == 4)
 def get_frequency(hand):
+    '''Gives the frequency of objects in hand'''
     hand_dict = {}
     for each_card in hand:
         if each_card in hand_dict:
-            hand_dict[each_card][0] += 1
+            hand_dict[each_card] += 1
         else:
             hand_dict[each_card] = 1
     return hand_dict
@@ -40,10 +41,11 @@ def is_three(hand_in):
     '''If there are 3 cards of the same type'''
     key_dic = get_frequency(hand_in)
     for each_card in hand_in:
-        if key_dict[each_key] == 3:
+        if key_dic[each_card] == 3:
             return True
     return False
 def two_pair(hand):
+    '''Finds whether hand is 2 pair'''
     two_dict = get_frequency(hand)
     pair_count = 0
     for each_key in hand:
@@ -53,9 +55,11 @@ def two_pair(hand):
         return True
     return False
 def one_pair(hand):
+    '''Find a pair of hand'''
     pair_dict = get_frequency(hand)
+    pair_count = 0
     for each_key in hand:
-        if two_dict[each_key] == 1:
+        if pair_dict[each_key] == 1:
             pair_count += 1
     if pair_count == 1:
         return True
@@ -104,15 +108,15 @@ def hand_rank(hand):
     face_value = '--23456789TJQKA'
     for c_l, _ in hand:
         new_list.append(face_value.index(c_l))
+    # print(new_list)
     temp_hand = sorted(new_list)
-    
-    if is_straight(temp_hand) and is_flush(temp_hand):
+    if is_straight(temp_hand) and is_flush(hand):
         return 9
     if four_ofakind(temp_hand):
         return 8
     if is_three(temp_hand) and one_pair(temp_hand):
         return 7
-    if is_flush(temp_hand):
+    if is_flush(hand):
         return 6
     if is_straight(temp_hand):
         return 5
