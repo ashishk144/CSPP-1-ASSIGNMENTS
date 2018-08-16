@@ -105,7 +105,7 @@ def hand_rank(hand):
     face_value = '--23456789TJQKA'
     for c_l, _ in hand:
         new_list.append(face_value.index(c_l))
-    print(new_list)
+    # print(new_list)
     temp_hand = sorted(new_list)
     if is_straight(temp_hand) and is_flush(hand):
         return 9
