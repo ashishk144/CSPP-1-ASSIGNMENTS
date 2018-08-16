@@ -136,11 +136,11 @@ def hand_rank(hand):
     #if high_hand(temp_hand):
     return 1 * maxi_mum(temp_hand)
 
-def maxi_mum(handss):
+def maxi_mum(hand):
     #for han in handss
     rank_dict = {}
-    if hand_rank(han) in rank_dict:
-        rank_dict[hand_rank(han)] = han
+    if hand_rank(hand) in rank_dict:
+        rank_dict[hand_rank(hand)] = [hand]
     max_key = max(rank_dict.key())
     max_key_value = rank_dict[max_key].values()
     card_val = 0
