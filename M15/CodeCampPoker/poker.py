@@ -145,11 +145,11 @@ def maxi_mum(handss):
     max_key_value = rank_dict[max_key].values()
     card_val = 0
     if len(max_key_value) > 1:
-    for i in range(len(max_key_value) - 1):
-        if max_key_value[i][0] > max_key_value[i+1][0]:
-            card_val = max_key_value[i][0]
-        else:
-            card_val = max_key_value[i][0]
+        for i in range(len(max_key_value) - 1):
+            if max_key_value[i][0] > max_key_value[i+1][0]:
+                card_val = max_key_value[i][0]
+            else:
+                card_val = max_key_value[i][0]
     return card_val
 
 def poker(hands):
