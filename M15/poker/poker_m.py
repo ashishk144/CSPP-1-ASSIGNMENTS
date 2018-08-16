@@ -13,9 +13,6 @@ def is_straight(hand):
         Think of an algorithm: given the card face value how to check if it a straight
         Write the code for it and return True if it is a straight else return False
     '''
-    if hand[0] == 2 and hand[1] == 3 and hand[2] == 4 and hand[3] == 5 \
-    and hand[-1] == 14:
-        hand[-1] = 1
     set_list = set(hand)
     # print(len(set_list), max(new_list)-min(new_list))
     return len(set_list) == 5 and (max(hand) - min(hand)) == 4
@@ -57,7 +54,6 @@ def two_pair(hand):
     if pair_count == 2:
         return True
     return False
-
 def one_pair(hand):
     '''Find a pair of hand'''
     pair_dict = get_frequency(hand)
@@ -83,9 +79,6 @@ def is_flush(hand):
         suit_set.add(each_card[1])
     # print(suit_set == 1)
     return len(suit_set) == 1
-def high_hand(hand):
-    '''high hand'''
-    return hand[-1]
 
 def hand_rank(hand):
     '''
@@ -133,26 +126,8 @@ def hand_rank(hand):
         return 3
     if one_pair(temp_hand):
         return 2
-    #if high_hand(temp_hand):
+    #if high_hand()
     return 1
-
-def maxi_mum(hand):
-    #for han in handss
-    rank_dict = {}
-    if hand_rank(hand) in rank_dict:
-        rank_dict[hand_rank(hand)] = rank_dict[hand_rank(hand)].append([hand])
-    else:
-        rank_dict[hand_rank(hand)] = [hand]
-    max_key = max(rank_dict.key())
-    max_key_value = rank_dict[max_key].values()
-    card_val = 0
-    if len(max_key_value) > 1:
-        for i in range(len(max_key_value) - 1):
-            if max_key_value[i][0] > max_key_value[i+1][0]:
-                card_val = max_key_value[i][0]
-            else:
-                card_val = max_key_value[i][0]
-    return rank_dict[max_key]
 
 def poker(hands):
     '''
@@ -172,15 +147,7 @@ def poker(hands):
     # hand_rank is a function passed to max
     # hand_rank takes a hand and returns its rank
     # max uses the rank returned by hand_rank and returns the best hand
-    # for hand_s in hands
-    #     if hand_rank(hand_s) in rank_dict:
-    #         rank_dict[hand_rank(hand_s)] = had_sn
-    #         max_key = max(rank_dict.key())
-    #         max_key_value = rank_dict[max_key].values()
-    #         card_val = 0
-    #         if len(max_key_value) > 1:
-
-    return maxi_mum(hands)
+    return max(hands, key=hand_rank)
 
 if __name__ == "__main__":
     # read the number of test cases
