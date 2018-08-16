@@ -9,8 +9,8 @@ def is_flush(hand):
 
 def kind_of(ranks, n):
     for r in ranks:
-        if ranks.count(rank) == n:
-            return rank
+        if ranks.count(r) == n:
+            return r
     return False
 
 def hand_rank(hand):
