@@ -1,3 +1,4 @@
+'''Poker Program'''
 def ranks(hand):
     '''Sorting rank function'''
     return sorted(['--23456789TJQKA'.index(c) for c, s in hand], reverse=True)
