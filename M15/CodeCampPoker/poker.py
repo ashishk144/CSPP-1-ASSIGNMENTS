@@ -51,7 +51,7 @@ def hand_rank(hand):
     if is_straight(rank):
         return (5, rank)
     if kind_of(rank, 3):
-        return (4, kind_of(rank, 3))
+        return (4, kind_of(rank, 3), max(rank))
     if kind_of(rank, 2) and kind_of(rank[::-1], 2) and kind_of(rank, 2) != kind_of(rank[::-1], 2):
         return (3, kind_of(rank, 2), kind_of(rank[::-1], 2))
     if kind_of(rank, 2):
