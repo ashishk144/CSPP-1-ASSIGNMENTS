@@ -58,7 +58,7 @@ def hand_rank(hand):
         if kind_of(hand_val, 2) and kind_of(hand_val[::-1], 2) and kind_of(hand_val, 2) != \
         kind_of(hand_val[::-1], 2) else
         (2, kind_of(hand_val, 2)) if kind_of(hand_val, 2) else
-(1, hand_val))
+        (1, hand_val))
 
 def poker(hands):
     '''
