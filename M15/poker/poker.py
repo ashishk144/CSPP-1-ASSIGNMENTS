@@ -13,16 +13,53 @@ def is_straight(hand):
         Think of an algorithm: given the card face value how to check if it a straight
         Write the code for it and return True if it is a straight else return False
     '''
-    new_list = []
-    face_value = '--23456789TJQKA'
-    for c,s in hand:
-        new_list.append(face_value.index(c))
-        set_list = set(new_list)
+    set_list = set(new_list)
     # print(len(set_list), max(new_list)-min(new_list))
     return len(set_list) == 5 and (max(new_list) - min(new_list)) == 4
     # card_values = set(['--23456789TJQKA'.index(c) for c,s in hand])
     # print(card_values)
     # return len(card_values)==5 and (max(card_values)-min(card_values) == 4)
+def get_frequency(hand):
+    hand_dict = {}
+    for each_card in hand:
+        if each_card in hand_dict:
+            hand_dict[each_card][0] += 1
+        else:
+            hand_dict[each_card] = 1
+    return hand_dict
+
+def four_ofakind(hand_inp):
+    '''if 4 cards are of the same value'''
+    key_dict = get_frequency(hand_inp)
+    for each_key in hand_inp:
+        if key_dict[each_key] == 4:
+            return True
+    return False
+
+def is_three(hand_in):
+    '''If there are 3 cards of the same type'''
+    key_dic = get_frequency(hand_in)
+    for each_card in hand_in:
+        if key_dict[each_key] == 3:
+            return True
+    return False
+def two_pair(hand):
+    two_dict = get_frequency(hand)
+    pair_count = 0
+    for each_key in hand:
+        if two_dict[each_key] == 2:
+            pair_count += 1
+    if pair_count == 2:
+        return True
+    return False
+def one_pair(hand):
+    pair_dict = get_frequency(hand)
+    for each_key in hand:
+        if two_dict[each_key] == 1:
+            pair_count += 1
+    if pair_count == 1:
+        return True
+    return False
 
 def is_flush(hand):
     '''
@@ -63,12 +100,28 @@ def hand_rank(hand):
     # third would be a straight with the return value 1
     # any other hand would be the fourth best with the return value 0
     # max in poker function uses these return values to select the best hand
-    if is_straight(hand) and is_flush(hand):
+    new_list = []
+    face_value = '--23456789TJQKA'
+    for c_l,s_l in hand:
+        new_list.append(face_value.index(c))
+    temp_hand = sorted(new_list)
+    if is_straight(temp_hand) and is_flush(temp_hand):
+        return 9
+    if four_ofakind(temp_hand):
+        return 8
+    if is_three(temp_hand) and one_pair(temp_hand):
+        return 7
+    if is_flush(temp_hand):
+        return 6
+    if is_straight(temp_hand):
         return 5
-    if is_flush(hand):
+    if is_three(temp_hand):
+        return 4
+    if two_pair(temp_hand):
         return 3
-    if is_straight(hand):
+    if one_pair(temp_hand):
         return 2
+    #if high_hand()
     return 1
 
 def poker(hands):
