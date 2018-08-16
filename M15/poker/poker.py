@@ -100,7 +100,7 @@ def hand_rank(hand):
     # third would be a straight with the return value 1
     # any other hand would be the fourth best with the return value 0
     # max in poker function uses these return values to select the best hand
-    new_list = []
+    new_list = []*5
     face_value = '--23456789TJQKA'
     for c_l, _ in hand:
         new_list.append(face_value.index(c_l))
