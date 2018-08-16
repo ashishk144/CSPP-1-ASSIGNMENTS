@@ -129,19 +129,20 @@ def hand_rank(hand):
     #if high_hand()
     return 1
 
-def maxi_mum(rank_dictmax):
-    # rank_dict = {}
-    # if hand_rank(hand) in rank_dict:
-    #     rank_dict[hand_rank(hand)] = hand
-    max_key = max(rank_dictmax.key())
-    max_key_value = rank_dictmax[max_key].values()
-    card_val = 0
-    for i in range(len(max_key_value) - 1):
-        if max_key_value[i][0] > max_key_value[i+1][0]:
-            card_val = max_key_value[i][0]
-        else:
-            card_val = max_key_value[i][0]
-    return card_val
+# def maxi_mum(hand):
+#     rank_dict = {}
+#     if hand_rank(hand) in rank_dict:
+#         rank_dict[hand_rank(hand)] = hand
+#     max_key = max(rank_dict.key())
+#     max_key_value = rank_dict[max_key].values()
+#     card_val = 0
+#     if len(max_key_value) > 1:
+#         for i in range(len(max_key_value) - 1):
+#             if max_key_value[i][0] > max_key_value[i+1][0]:
+#                 card_val = max_key_value[i][0]
+#             else:
+#                 card_val = max_key_value[i][0]
+#     return card_val
 
 def poker(hands):
     '''
@@ -161,12 +162,6 @@ def poker(hands):
     # hand_rank is a function passed to max
     # hand_rank takes a hand and returns its rank
     # max uses the rank returned by hand_rank and returns the best hand
-    rank_dict = {}
-    if hand_rank(hands) in rank_dict:
-        rank_dict[hand_rank(hand)] = hands
-    max_key = max(rank_dict.key())
-    if len(max_key_value) > 1:
-        return maxi_mum(rank_dict)
     return max(hands, key=hand_rank)
 
 if __name__ == "__main__":
