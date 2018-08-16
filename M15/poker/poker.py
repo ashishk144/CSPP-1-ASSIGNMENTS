@@ -20,6 +20,7 @@ def is_straight(hand):
     # print(card_values)
     # return len(card_values)==5 and (max(card_values)-min(card_values) == 4)
 def get_frequency(hand):
+    '''Gives the frequency of objects in hand'''
     hand_dict = {}
     for each_card in hand:
         if each_card in hand_dict:
@@ -53,6 +54,7 @@ def two_pair(hand):
         return True
     return False
 def one_pair(hand):
+    '''Find a pair of hand'''
     pair_dict = get_frequency(hand)
     pair_count = 0
     for each_key in hand:
