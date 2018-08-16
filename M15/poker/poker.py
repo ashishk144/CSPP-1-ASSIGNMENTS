@@ -40,7 +40,7 @@ def is_three(hand_in):
     '''If there are 3 cards of the same type'''
     key_dic = get_frequency(hand_in)
     for each_card in hand_in:
-        if key_dic[each_key] == 3:
+        if key_dic[each_card] == 3:
             return True
     return False
 def two_pair(hand):
