@@ -129,6 +129,20 @@ def hand_rank(hand):
     #if high_hand()
     return 1
 
+def maxi_mum(rank_dictmax):
+    # rank_dict = {}
+    # if hand_rank(hand) in rank_dict:
+    #     rank_dict[hand_rank(hand)] = hand
+    max_key = max(rank_dictmax.key())
+    max_key_value = rank_dictmax[max_key].values()
+    card_val = 0
+    for i in range(len(max_key_value) - 1):
+        if max_key_value[i][0] > max_key_value[i+1][0]:
+            card_val = max_key_value[i][0]
+        else:
+            card_val = max_key_value[i][0]
+    return card_val
+
 def poker(hands):
     '''
         This function is completed for you. Read it to learn the code.
@@ -147,7 +161,14 @@ def poker(hands):
     # hand_rank is a function passed to max
     # hand_rank takes a hand and returns its rank
     # max uses the rank returned by hand_rank and returns the best hand
-    return max(hands, key=hand_rank)
+    rank_dict = {}
+    if hand_rank(hand) in rank_dict:
+        rank_dict[hand_rank(hand)] = hand
+    max_key = max(rank_dict.key())
+    if len(max_key_value) > 1:
+        return maxi_mum(rank_dict)
+    else:
+        return max(hands, key=hand_rank)
 
 if __name__ == "__main__":
     # read the number of test cases
