@@ -118,23 +118,23 @@ def hand_rank(hand):
     # print(new_list)
     temp_hand = sorted(new_list)
     if is_straight(temp_hand) and is_flush(hand):
-        return 9 * maxi_mum(temp_hand)
+        return 9
     if four_ofakind(temp_hand):
-        return 8 * maxi_mum(temp_hand)
+        return 8
     if is_three(temp_hand) and one_pair(temp_hand):
-        return 7 * maxi_mum(temp_hand)
+        return 7
     if is_flush(hand):
-        return 6 * maxi_mum(temp_hand)
+        return 6
     if is_straight(temp_hand):
-        return 5 * maxi_mum(temp_hand)
+        return 5
     if is_three(temp_hand):
-        return 4 * maxi_mum(temp_hand)
+        return 4
     if two_pair(temp_hand):
-        return 3 * maxi_mum(temp_hand)
+        return 3
     if one_pair(temp_hand):
-        return 2 * maxi_mum(temp_hand)
+        return 2
     #if high_hand(temp_hand):
-    return 1 * maxi_mum(temp_hand)
+    return 1
 
 def maxi_mum(hand):
     #for han in handss
