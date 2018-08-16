@@ -10,9 +10,10 @@ def is_straight(rank):
 
 def is_flush(hand):
     '''is flush function'''
-    return len(set(s for c,s in hand)) == 1
+    return len(set(s for c, s in hand)) == 1
 
 def kind_of(ranks, num_ofcard):
+    '''writing kind of function'''
     for r_rank in ranks:
         if ranks.count(r_rank) == num_ofcard:
             return r_rank
