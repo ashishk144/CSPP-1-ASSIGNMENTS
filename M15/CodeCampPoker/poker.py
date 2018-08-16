@@ -1,91 +1,17 @@
-'''
-    Write a program to evaluate poker hands and determine the winner
-    Read about poker hands here.
-    https://en.wikipedia.org/wiki/List_of_poker_hands
-'''
-def is_straight(hand):
-    '''
-        How do we find out if the given hand is a straight?
-        The hand has a list of cards represented as strings.
-        There are multiple ways of checking if the hand is a straight.
-        Do we need both the characters in the string? No.
-        The first character is good enough to determine a straight
-        Think of an algorithm: given the card face value how to check if it a straight
-        Write the code for it and return True if it is a straight else return False
-    '''
-    if hand[0] == 2 and hand[1] == 3 and hand[2] == 4 and hand[3] == 5 \
-    and hand[-1] == 14:
-        hand[-1] = 1
-    set_list = set(hand)
-    # print(len(set_list), max(new_list)-min(new_list))
-    return len(set_list) == 5 and (max(hand) - min(hand)) == 4
-    # card_values = set(['--23456789TJQKA'.index(c) for c,s in hand])
-    # print(card_values)
-    # return len(card_values)==5 and (max(card_values)-min(card_values) == 4)
-def get_frequency(hand):
-    '''Gives the frequency of objects in hand'''
-    hand_dict = {}
-    for each_card in hand:
-        if each_card in hand_dict:
-            hand_dict[each_card] += 1
-        else:
-            hand_dict[each_card] = 1
-    return hand_dict
+def ranks(hand):
+    return sorted(['--23456789TJQKA'.index(c) for c,s in hand], reverse = True)
 
-def four_ofakind(hand_inp):
-    '''if 4 cards are of the same value'''
-    key_dict = get_frequency(hand_inp)
-    for each_key in hand_inp:
-        if key_dict[each_key] == 4:
-            return True
-    return False
-
-def is_three(hand_in):
-    '''If there are 3 cards of the same type'''
-    key_dic = get_frequency(hand_in)
-    for each_card in hand_in:
-        if key_dic[each_card] == 3:
-            return True
-    return False
-def two_pair(hand):
-    '''Finds whether hand is 2 pair'''
-    two_dict = get_frequency(hand)
-    pair_count = 0
-    for each_key in hand:
-        if two_dict[each_key] == 2:
-            pair_count += 1
-    if pair_count == 2:
-        return True
-    return False
-
-def one_pair(hand):
-    '''Find a pair of hand'''
-    pair_dict = get_frequency(hand)
-    pair_count = 0
-    for each_key in hand:
-        if pair_dict[each_key] == 1:
-            pair_count += 1
-    if pair_count == 1:
-        return True
-    return False
+def is_straight(rank):
+    return len(set(rank)) == 5 and max(rank)-min(rank) == 4
 
 def is_flush(hand):
-    '''
-        How do we find out if the given hand is a flush?
-        The hand has a list of cards represented as strings.
-        Do we need both the characters in the string? No.
-        The second character is good enough to determine a flush
-        Think of an algorithm: given the card suite how to check if it is a flush
-        Write the code for it and return True if it is a flush else return False
-    '''
-    suit_set = set()
-    for each_card in hand:
-        suit_set.add(each_card[1])
-    # print(suit_set == 1)
-    return len(suit_set) == 1
-def high_hand(hand):
-    '''high hand'''
-    return hand[-1]
+    return len(set(s for c,s in hand)) == 1
+
+def kind_of(ranks, n):
+    for r in ranks:
+        if ranks.count(r) == n:
+            return r
+    return False
 
 def hand_rank(hand):
     '''
@@ -111,48 +37,27 @@ def hand_rank(hand):
     # third would be a straight with the return value 1
     # any other hand would be the fourth best with the return value 0
     # max in poker function uses these return values to select the best hand
-    new_list = []
-    face_value = '--23456789TJQKA'
-    for c_l, _ in hand:
-        new_list.append(face_value.index(c_l))
-    # print(new_list)
-    temp_hand = sorted(new_list)
-    if is_straight(temp_hand) and is_flush(hand):
-        return 9
-    if four_ofakind(temp_hand):
-        return 8
-    if is_three(temp_hand) and one_pair(temp_hand):
-        return 7
-    if is_flush(hand):
-        return 6
-    if is_straight(temp_hand):
-        return 5
-    if is_three(temp_hand):
-        return 4
-    if two_pair(temp_hand):
-        return 3
-    if one_pair(temp_hand):
-        return 2
-    #if high_hand(temp_hand):
-    return 1
 
-def maxi_mum(hand):
-    #for han in handss
-    rank_dict = {}
-    if hand_rank(hand) in rank_dict:
-        rank_dict[hand_rank(hand)] = rank_dict[hand_rank(hand)].append([hand])
-    else:
-        rank_dict[hand_rank(hand)] = [hand]
-    max_key = max(rank_dict.key())
-    max_key_value = rank_dict[max_key].values()
-    card_val = 0
-    if len(max_key_value) > 1:
-        for i in range(len(max_key_value) - 1):
-            if max_key_value[i][0] > max_key_value[i+1][0]:
-                card_val = max_key_value[i][0]
-            else:
-                card_val = max_key_value[i][0]
-    return rank_dict[max_key]
+    rank = ranks(hand)
+
+    if is_straight(rank) and is_flush(hand):
+        return (9, rank)
+    if kind_of(rank, 4):
+        return (8, rank)
+    if kind_of(rank, 3) and kind_of(rank, 2):
+        return (7, rank)
+    if is_flush(hand):
+        return (6, rank)
+    if is_straight(rank):
+        return (5, rank)
+    if kind_of(rank, 3):
+        return (4, rank)
+    if kind_of(rank, 2) and kind_of(rank[::-1], 2) and kind_of(rank, 2) != kind_of(rank[::-1], 2):
+        return (3, rank)
+    if kind_of(rank, 2):
+        return (2, rank)
+    #if high_hand()
+    return (1, rank)
 
 def poker(hands):
     '''
@@ -172,15 +77,7 @@ def poker(hands):
     # hand_rank is a function passed to max
     # hand_rank takes a hand and returns its rank
     # max uses the rank returned by hand_rank and returns the best hand
-    # for hand_s in hands
-    #     if hand_rank(hand_s) in rank_dict:
-    #         rank_dict[hand_rank(hand_s)] = had_sn
-    #         max_key = max(rank_dict.key())
-    #         max_key_value = rank_dict[max_key].values()
-    #         card_val = 0
-    #         if len(max_key_value) > 1:
-
-    return maxi_mum(hands)
+    return max(hands, key=hand_rank)
 
 if __name__ == "__main__":
     # read the number of test cases
