@@ -2,6 +2,7 @@
     Document Distance - A detailed description is given in the PDF
 '''
 def word_list(inp_1):
+    '''wordlist function'''
     new_dict = {}
     line_1 = inp_1
     line_1 = line_1.lower()
@@ -24,14 +25,15 @@ def word_list(inp_1):
     return new_dict
 
 def del_words(dicti, stopword):
+    '''delete words'''
     for word_s in stopword:
         if word_s in dicti:
             del dicti[word_s]
     return dicti
 
-def print_dic(d):
-    for i in d:
-        print(i,":",d[i])
+# def print_dic(d):
+#     for i in d:
+#         print(i,":",d[i])
 
 def similarity(dict1, dict2):
     '''
@@ -53,7 +55,7 @@ def similarity(dict1, dict2):
             freq_dict[key_s] = [new_dict1[key_s], 0]
         elif key_s in new_dict2 and key_s not in new_dict1 and key_s != '':
             freq_dict[key_s] = [0, new_dict2[key_s]]
-    
+
     # print_dic(freq_dict)
 
     numerator = 0
