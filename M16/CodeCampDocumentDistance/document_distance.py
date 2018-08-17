@@ -29,6 +29,10 @@ def del_words(dicti, stopword):
             del dicti[word_s]
     return dicti
 
+def print_dic(d):
+    for i in d:
+        print(i,":",d[i])
+
 def similarity(dict1, dict2):
     '''
         Compute the document distance as given in the PDF
@@ -40,7 +44,6 @@ def similarity(dict1, dict2):
     stop_words = load_stopwords('stopwords.txt')
     new_dict1 = del_words(dict_1, stop_words)
     new_dict2 = del_words(dict_2, stop_words)
-
     key_set = set(list(new_dict1.keys()) + list(new_dict2.keys()))
     freq_dict = {}
     for key_s in key_set:
@@ -50,6 +53,9 @@ def similarity(dict1, dict2):
             freq_dict[key_s] = [new_dict1[key_s], 0]
         elif key_s in new_dict2 and key_s not in new_dict1:
             freq_dict[key_s] = [0, new_dict2[key_s]]    
+    
+    print_dic(freq_dict)
+
     numerator = 0
     deno_1 = 0
     deno_2 = 0
