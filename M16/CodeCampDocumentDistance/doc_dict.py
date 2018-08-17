@@ -30,7 +30,6 @@ def word_freq(word_list, ind, diction):
             if each_wrd not in diction:
                 diction[each_wrd] = [0, 0]
             diction[each_wrd][ind] += 1
-    print_dic(diction)
     return diction
 
 def print_dic(d):
@@ -57,7 +56,7 @@ def similarity(dict1, dict2):
     dictionary = {}
     dictionary = word_freq(input_1, 0, dictionary)
     dictionary = word_freq(input_2, 1, dictionary)
-
+    print_dic(dictionary)
     return computation(dictionary)
 def load_stopwords(filename):
     '''
