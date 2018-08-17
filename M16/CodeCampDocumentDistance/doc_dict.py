@@ -17,11 +17,11 @@ def string_opr(inp_str):
     # # print(list_ofwords)
     # return list_ofwords
     regex = re.compile('[^a-z ]')
-    return(regex.sub('', eachword.strip()) for eachword in inp_str.lower().split(' '))
+    return [regex.sub('', eachword.strip()) for eachword in inp_str.lower().split(' ')]
 
 def remove_stopword(word_list):
     '''removing stopwords'''
-    print(word_list)
+    # print(word_list)
     stop_words = load_stopwords('stopwords.txt')
     for each_word in stop_words:
         while each_word in word_list:
@@ -57,7 +57,7 @@ def similarity(dict1, dict2):
     input_1 = string_opr(dict1)
     input_2 = string_opr(dict2)
 
-    print(input_2, input_1)
+    # print(input_2, input_1)
 
     input_1 = remove_stopword(input_1)
     input_2 = remove_stopword(input_2)
