@@ -3,8 +3,11 @@
 '''
 def word_list(inp_1):
     words_list = []
+    line_1 = []
     for line in inp_1:
-        line = line.lower()
+        print(line)
+        line_1 = line.lower()
+
         words_list = line.split('\n')
         return words_list
 
