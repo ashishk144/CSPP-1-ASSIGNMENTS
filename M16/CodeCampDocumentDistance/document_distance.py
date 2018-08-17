@@ -39,7 +39,7 @@ def similarity(dict1, dict2):
     new_dict1 = del_words(dict_1, stop_words)
     new_dict2 = del_words(dict_2, stop_words)
 
-    key_set = set(new_dict1.keys() + new_dict2.keys())
+    key_set = set(list(new_dict1.keys()) + list(new_dict2.keys()))
     freq_dict = {}
     for key_s in key_set:
         if key_s in new_dict1 and key_s in new_dict2:
@@ -54,7 +54,7 @@ def similarity(dict1, dict2):
             numerator += freq_dict[keys][0] * freq_dict[keys][1]
             denominator += freq_dict[keys][0] ^ freq_dict[keys][1]
         similarity = numerator / denominator
-        return similarity
+        return similaritys
 def load_stopwords(filename):
     '''
         loads stop words from a file and returns a dictionary
