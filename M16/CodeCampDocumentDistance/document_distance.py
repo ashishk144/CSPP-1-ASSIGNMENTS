@@ -33,6 +33,8 @@ def similarity(dict1, dict2):
     '''
         Compute the document distance as given in the PDF
     '''
+    import math
+
     dict_1 = word_list(dict1)
     dict_2 = word_list(dict2)
     stop_words = load_stopwords('stopwords.txt')
@@ -52,8 +54,10 @@ def similarity(dict1, dict2):
         denominator = 0
         for keys in freq_dict:
             numerator += freq_dict[keys][0] * freq_dict[keys][1]
-            denominator += freq_dict[keys][0] ^ freq_dict[keys][1]
-        similar = numerator / denominator
+            deno_1 += freq_dict[keys][0] ^ freq_dict[keys][0]
+            deno_2 += freq_dict[keys][1] ^ freq_dict[keys][1]
+        denominator = math.sqrt(deno_1) * math.sqrt(deno_2)
+        similar = numerator/denominator
         return similar
 
 def load_stopwords(filename):
