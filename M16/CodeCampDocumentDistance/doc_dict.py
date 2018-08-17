@@ -6,6 +6,7 @@ import re
 import math
 
 def string_opr(inp_str):
+    '''string operations'''
     inp_str = inp_str.lower()
     regex = re.compile('[^a-z ]')
     inp_str = regex.sub('', inp_str)
@@ -17,6 +18,7 @@ def string_opr(inp_str):
     # regex = re.compile('[^a-z]')
     # return(regex.sub('', eachword.strip()) for eachword in inp_str.lower().split(' '))
 def remove_stopword(word_list):
+    '''removing stopwords'''
     stop_words = load_stopwords('stopwords.txt')
     for each_word in stop_words:
         while each_word in word_list:
@@ -25,6 +27,7 @@ def remove_stopword(word_list):
     return word_list
 
 def word_freq(word_list, ind, diction):
+    '''finding the word frequency'''
     for each_wrd in word_list:
         if each_wrd != '':
             if each_wrd not in diction:
@@ -32,9 +35,9 @@ def word_freq(word_list, ind, diction):
             diction[each_wrd][ind] += 1
     return diction
 
-def print_dic(d):
-    for i in d:
-        print(i,":",d[i])
+# def print_dic(d):
+#     for i in d:
+#         print(i,":",d[i])
 
 def computation(dictionary):
     numerator = sum(value[0]*value[1] for value in dictionary.values())
@@ -58,13 +61,13 @@ def similarity(dict1, dict2):
     dictionary = word_freq(input_2, 1, dictionary)
     # print_dic(dictionary)
     return computation(dictionary)
-def load_stopwords(filename):
+def load_stopwords(file_name):
     '''
         loads stop words from a file and returns a dictionary
     '''
     stopwords = {}
-    with open(filename, 'r') as filename:
-        for line in filename:
+    with open(file_name, 'r') as file_name:
+        for line in file_name:
             stopwords[line.strip()] = 0
     return stopwords
 
