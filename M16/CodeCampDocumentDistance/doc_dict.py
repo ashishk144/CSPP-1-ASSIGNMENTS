@@ -18,8 +18,10 @@ def string_opr(inp_str):
     # return list_ofwords
     regex = re.compile('[^a-z ]')
     return(regex.sub('', eachword.strip()) for eachword in inp_str.lower().split(' '))
+
 def remove_stopword(word_list):
     '''removing stopwords'''
+    print(word_list)
     stop_words = load_stopwords('stopwords.txt')
     for each_word in stop_words:
         while each_word in word_list:
