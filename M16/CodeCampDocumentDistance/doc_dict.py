@@ -29,13 +29,14 @@ def word_freq(word_list, ind, diction):
         if each_wrd != '' and each_wrd not in diction:
             diction[each_wrd] = [0, 0]
         diction[each_wrd][ind] += 1
-    print(diction)
+    # print(diction)
     return diction
 
 def computation(dictionary):
     numerator = sum(value[0]*value[1] for value in dictionary.values())
     denom_1 = math.sqrt(sum(value[0]**2 for value in dictionary.values()))
     denom_2 = math.sqrt(sum(value[1]**2 for value in dictionary.values()))
+    print(numerator, denom_2, denom_1)
     return numerator/(denom_1*denom_2)
 
 def similarity(dict1, dict2):
