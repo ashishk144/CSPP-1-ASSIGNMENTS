@@ -51,7 +51,8 @@ def similarity(dict1, dict2):
         else:
             freq_dict[key_s] = [0, new_dict2[key_s]]
         numerator = 0
-        denominator = 0
+        deno_1 = 0
+        deno_2 = 0
         for keys in freq_dict:
             numerator += freq_dict[keys][0] * freq_dict[keys][1]
             deno_1 += freq_dict[keys][0] ^ freq_dict[keys][0]
