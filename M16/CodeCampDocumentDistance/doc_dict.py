@@ -7,17 +7,17 @@ import math
 
 def string_opr(inp_str):
     '''string operations'''
-    # inp_str = inp_str.lower()
-    # regex = re.compile('[^a-z ]')
-    # inp_str = regex.sub('', inp_str)
-    print(regex.sub('', inp_str))
-    # list_ofwords = inp_str.split(' ')
-    # for index in range(len(list_ofwords)):
-    #     list_ofwords[index] = list_ofwords[index].strip()
-    # # print(list_ofwords)
-    # return list_ofwords
+    inp_str = inp_str.lower()
     regex = re.compile('[^a-z ]')
-    return [regex.sub('', eachword.strip()) for eachword in inp_str.lower().split(' ')]
+    inp_str = regex.sub('', inp_str)
+    print(regex.sub('', inp_str))
+    list_ofwords = inp_str.split(' ')
+    for index in range(len(list_ofwords)):
+        list_ofwords[index] = list_ofwords[index].strip()
+    # print(list_ofwords)
+    return list_ofwords
+    # regex = re.compile('[^a-z ]')
+    # return [regex.sub('', eachword.strip()) for eachword in inp_str.lower().split(' ')]
 
 def remove_stopword(word_list):
     '''removing stopwords'''
