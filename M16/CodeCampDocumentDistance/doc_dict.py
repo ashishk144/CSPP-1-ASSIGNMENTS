@@ -25,7 +25,7 @@ def word_freq(word_list, ind, diction={}):
     for each_wrd in word_list:
         if each_wrd != '' and each_wrd not in diction:
             diction[each_wrd] = [0, 0]
-        diction[each_wrd][index] += 1
+        diction[each_wrd][ind] += 1
 
 def computation(dictionary):
     numerator = sum(value[0]*value[1] for value in dictionary.values())
