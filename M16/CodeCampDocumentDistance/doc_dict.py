@@ -19,7 +19,7 @@ def remove_stopword(word_list):
     stop_words = load_stopwords('stopwords.txt')
     for each_word in stop_words:
         if each_word in word_list:
-            word_list.remove(stop_words)
+            word_list.remove(each_word)
     return word_list
 
 def word_freq(word_list, ind, diction):
