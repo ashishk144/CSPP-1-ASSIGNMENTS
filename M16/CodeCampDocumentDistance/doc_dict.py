@@ -19,7 +19,7 @@ def string_opr(inp_str):
 def remove_stopword(word_list):
     stop_words = load_stopwords('stopwords.txt')
     for each_word in stop_words:
-        if each_word in word_list:
+        while each_word in word_list:
             word_list.remove(each_word)
     # print(word_list)
     return word_list
@@ -56,7 +56,7 @@ def similarity(dict1, dict2):
     dictionary = {}
     dictionary = word_freq(input_1, 0, dictionary)
     dictionary = word_freq(input_2, 1, dictionary)
-    print_dic(dictionary)
+    # print_dic(dictionary)
     return computation(dictionary)
 def load_stopwords(filename):
     '''
