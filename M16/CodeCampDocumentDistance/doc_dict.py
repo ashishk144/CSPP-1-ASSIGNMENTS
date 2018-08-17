@@ -10,7 +10,7 @@ def string_opr(inp_str):
     # inp_str = inp_str.lower()
     # regex = re.compile('[^a-z ]')
     # inp_str = regex.sub('', inp_str)
-    # # print(regex.sub('', inp_str))
+    print(regex.sub('', inp_str))
     # list_ofwords = inp_str.split(' ')
     # for index in range(len(list_ofwords)):
     #     list_ofwords[index] = list_ofwords[index].strip()
@@ -38,9 +38,9 @@ def word_freq(word_list, ind, diction):
             diction[each_wrd][ind] += 1
     return diction
 
-def print_dic(d):
-    for i in d:
-        print(i,":",d[i])
+# def print_dic(d):
+#     for i in d:
+#         print(i,":",d[i])
 
 def computation(dictionary):
     '''computing the similarity value'''
