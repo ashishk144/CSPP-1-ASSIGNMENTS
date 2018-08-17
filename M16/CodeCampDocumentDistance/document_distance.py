@@ -40,6 +40,7 @@ def similarity(dict1, dict2):
     # print(new_dict1, new_dict2)
     list_ofdict = new_dict1.keys()
     list_ofdict2 = new_dict1.values()
+    print(list_ofdict2, list_ofdict)
 
 def load_stopwords(filename):
     '''
