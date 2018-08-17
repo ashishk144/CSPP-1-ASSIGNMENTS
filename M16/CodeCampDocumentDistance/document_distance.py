@@ -6,7 +6,8 @@ def word_list(inp_1):
     line_1 = inp_1
     line_1 = line_1.lower()
     line_1 = line_1.split('\n')
-    for line in inp_1:
+    print(line_1)
+    for line in line_1:
         print(line)
         words_list = line.split(' ')
         return words_list
