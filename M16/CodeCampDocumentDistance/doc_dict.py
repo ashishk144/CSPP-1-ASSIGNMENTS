@@ -65,7 +65,7 @@ def similarity(dict1, dict2):
     dictionary = {}
     dictionary = word_freq(input_1, 0, dictionary)
     dictionary = word_freq(input_2, 1, dictionary)
-    print_dic(dictionary)
+    # print_dic(dictionary)
     return computation(dictionary)
 def load_stopwords(file_name):
     '''

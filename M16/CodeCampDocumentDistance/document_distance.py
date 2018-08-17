@@ -22,7 +22,7 @@ def word_list(inp_1):
             new_dict[char_s] = 1
         else:
             new_dict[char_s] += 1
-    print_dic(new_dict)
+    # print_dic(new_dict)
     return new_dict
 
 def del_words(dicti, stopword):
@@ -32,9 +32,9 @@ def del_words(dicti, stopword):
             del dicti[word_s]
     return dicti
 
-def print_dic(d):
-    for i in d:
-        print(i,":",d[i])
+# def print_dic(d):
+#     for i in d:
+#         print(i,":",d[i])
 
 def similarity(dict1, dict2):
     '''
@@ -57,7 +57,7 @@ def similarity(dict1, dict2):
         elif key_s in new_dict2 and key_s not in new_dict1 and key_s != '':
             freq_dict[key_s] = [0, new_dict2[key_s]]
 
-    print_dic(freq_dict)
+    # print_dic(freq_dict)
 
     numerator = 0
     deno_1 = 0
