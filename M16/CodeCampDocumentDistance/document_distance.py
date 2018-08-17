@@ -5,12 +5,13 @@ def word_list(inp_1):
     words_list = []
     line_1 = inp_1
     line_1 = line_1.lower()
-    line_1 = line_1.split('\n')
-    print(line_1)
-    for line in line_1:
-        print(line)
-        words_list = line.split(' ')
-    return words_list
+    line_1 = line_1.strip()
+    # line_1 = line_1.split('\n')
+    # print(line_1)
+    # for line in line_1:
+    #     print(line)
+    #     words_list = line.split(' ')
+    # return words_list
 
 def similarity(dict1, dict2):
     '''
