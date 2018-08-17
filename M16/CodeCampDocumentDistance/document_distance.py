@@ -2,6 +2,7 @@
     Document Distance - A detailed description is given in the PDF
 '''
 def word_list(inp_1):
+    new_dict = {}
     line_1 = inp_1
     line_1 = line_1.lower()
     line_1 = line_1.replace('.', '').replace(',', '').replace('?', '')
@@ -11,6 +12,11 @@ def word_list(inp_1):
     # for line in line_1:
     #      print(line)
     #      words_list = line.strip()
+    for char_s in line_1:
+        if char_s not in new_dict:
+            new_dict[char_s] = 1
+        else:
+            new_dict[char_s] += 1
     return line_1
 
 def similarity(dict1, dict2):
