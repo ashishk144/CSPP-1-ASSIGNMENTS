@@ -6,14 +6,15 @@ import re
 import math
 
 def string_opr(inp_str):
-    inp_str = inp_str.lower()
+    # inp_str = inp_str.lower()
+    # regex = re.compile('[^a-z]')
+    # inp_str = regex.sub('', inp_str)
+    # list_ofwords = inp_str.split(' ')
+    # for index in range(len(list_ofwords)):
+    #     list_ofwords[index] = list_ofwords[index].strip()
+    # return list_ofwords
     regex = re.compile('[^a-z]')
-    inp_str = regex.sub('', inp_str)
-    list_ofwords = inp_str.split()
-    for index in range(len(list_ofwords)):
-        list_ofwords[index] = list_ofwords[index].strip()
-    return list_ofwords
-
+    return(regex.sub('', eachword.strip()) for eachword in inp_str.lower().split(' '))
 def remove_stopword(word_list):
     stop_words = load_stopwords('stopwords.txt')
     for each_word in word_list:
@@ -21,11 +22,12 @@ def remove_stopword(word_list):
             word_list.remove(stop_words)
     return word_list
 
-def word_freq(word_list, ind, diction={}):
+def word_freq(word_list, ind, diction):
     for each_wrd in word_list:
         if each_wrd != '' and each_wrd not in diction:
             diction[each_wrd] = [0, 0]
         diction[each_wrd][ind] += 1
+    return diction
 
 def computation(dictionary):
     numerator = sum(value[0]*value[1] for value in dictionary.values())
