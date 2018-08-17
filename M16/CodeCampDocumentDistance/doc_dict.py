@@ -38,9 +38,9 @@ def word_freq(word_list, ind, diction):
             diction[each_wrd][ind] += 1
     return diction
 
-# def print_dic(d):
-#     for i in d:
-#         print(i,":",d[i])
+def print_dic(d):
+    for i in d:
+        print(i,":",d[i])
 
 def computation(dictionary):
     '''computing the similarity value'''
