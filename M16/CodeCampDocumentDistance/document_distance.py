@@ -9,7 +9,7 @@ def word_list(inp_1):
     .replace('0', '').replace('1', '').replace('2', '')\
     .replace('3', '').replace('4', '').replace('5', '')\
     .replace('6', '').replace('7', '').replace('8', '')\
-    .replace('9', '')
+    .replace('9', '').replace('-', '')
     line_1 = line_1.split(' ')
     # line_1 = line_1.split('\n')
     # print(line_1)
@@ -52,7 +52,9 @@ def similarity(dict1, dict2):
         elif key_s in new_dict1 and key_s not in new_dict2:
             freq_dict[key_s] = [new_dict1[key_s], 0]
         elif key_s in new_dict2 and key_s not in new_dict1:
-            freq_dict[key_s] = [0, new_dict2[key_s]]    
+            freq_dict[key_s] = [0, new_dict2[key_s]]
+        else:
+            pass
     
     print_dic(freq_dict)
 
