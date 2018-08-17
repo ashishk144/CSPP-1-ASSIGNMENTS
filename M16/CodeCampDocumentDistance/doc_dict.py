@@ -12,7 +12,7 @@ def string_opr(inp_str):
     list_ofwords = inp_str.split(' ')
     for index in range(len(list_ofwords)):
         list_ofwords[index] = list_ofwords[index].strip()
-    print(list_ofwords)
+    # print(list_ofwords)
     return list_ofwords
     # regex = re.compile('[^a-z]')
     # return(regex.sub('', eachword.strip()) for eachword in inp_str.lower().split(' '))
@@ -21,6 +21,7 @@ def remove_stopword(word_list):
     for each_word in stop_words:
         if each_word in word_list:
             word_list.remove(each_word)
+    print(word_list)
     return word_list
 
 def word_freq(word_list, ind, diction):
