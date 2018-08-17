@@ -53,8 +53,9 @@ def similarity(dict1, dict2):
         for keys in freq_dict:
             numerator += freq_dict[keys][0] * freq_dict[keys][1]
             denominator += freq_dict[keys][0] ^ freq_dict[keys][1]
-        similarity = numerator / denominator
-        return similarity
+        similar = numerator / denominator
+        return similar
+
 def load_stopwords(filename):
     '''
         loads stop words from a file and returns a dictionary
