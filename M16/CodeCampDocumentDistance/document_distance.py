@@ -37,7 +37,9 @@ def similarity(dict1, dict2):
     for word_s in stop_words:
         if word_s in new_dict2:
             del new_dict2[word_s]
-    print(new_dict1, new_dict2)
+    # print(new_dict1, new_dict2)
+    list_ofdict = new_dict1.keys()
+    list_ofdict2 = new_dict1.value()
 
 def load_stopwords(filename):
     '''
