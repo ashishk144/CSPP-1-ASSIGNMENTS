@@ -26,9 +26,10 @@ def remove_stopword(word_list):
 
 def word_freq(word_list, ind, diction):
     for each_wrd in word_list:
-        if each_wrd != '' and each_wrd not in diction:
-            diction[each_wrd] = [0, 0]
-        diction[each_wrd][ind] += 1
+        if each_wrd != '':
+            if each_wrd not in diction:
+                diction[each_wrd] = [0, 0]
+            diction[each_wrd][ind] += 1
     # print(diction)
     return diction
 
