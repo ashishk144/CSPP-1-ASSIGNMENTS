@@ -42,6 +42,7 @@ def similarity(dict1, dict2):
     new_dict2 = del_words(dict_2, stop_words)
 
     key_set = set(list(new_dict1.keys()) + list(new_dict2.keys()))
+    print(key_set)
     freq_dict = {}
     for key_s in key_set:
         if key_s in new_dict1 and key_s in new_dict2:
