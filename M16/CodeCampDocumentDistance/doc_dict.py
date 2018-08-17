@@ -17,8 +17,8 @@ def string_opr(inp_str):
     return(regex.sub('', eachword.strip()) for eachword in inp_str.lower().split(' '))
 def remove_stopword(word_list):
     stop_words = load_stopwords('stopwords.txt')
-    for each_word in word_list:
-        if each_word in stop_words:
+    for each_word in stop_words:
+        if each_word in word_list:
             word_list.remove(stop_words)
     return word_list
 
