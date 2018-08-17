@@ -50,6 +50,7 @@ def similarity(dict1, dict2):
             freq_dict[key_s] = [new_dict1[key_s], 0]
         else:
             freq_dict[key_s] = [0, new_dict2[key_s]]
+        print(freq_dict)
         numerator = 0
         deno_1 = 0
         deno_2 = 0
