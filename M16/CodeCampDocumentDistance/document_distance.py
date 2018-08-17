@@ -4,7 +4,7 @@
 def word_list(inp_1):
     words_list = []
     for line in inp_1:
-        line = line.lowercase()
+        line = line.lower()
         words_list = line.split('\n')
         return words_list
 
