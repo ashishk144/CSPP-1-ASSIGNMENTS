@@ -40,6 +40,7 @@ def word_freq(word_list, ind, diction):
 #         print(i,":",d[i])
 
 def computation(dictionary):
+    '''computing the similarity value'''
     numerator = sum(value[0]*value[1] for value in dictionary.values())
     denom_1 = math.sqrt(sum(value[0]**2 for value in dictionary.values()))
     denom_2 = math.sqrt(sum(value[1]**2 for value in dictionary.values()))
