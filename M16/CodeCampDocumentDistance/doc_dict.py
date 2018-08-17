@@ -30,8 +30,12 @@ def word_freq(word_list, ind, diction):
             if each_wrd not in diction:
                 diction[each_wrd] = [0, 0]
             diction[each_wrd][ind] += 1
-    print(diction)
+    print_dic(diction)
     return diction
+
+def print_dic(d):
+    for i in d:
+        print(i,":",d[i])
 
 def computation(dictionary):
     numerator = sum(value[0]*value[1] for value in dictionary.values())
