@@ -3,12 +3,12 @@
 '''
 def word_list(inp_1):
     words_list = []
-    line_1 = []
+    line_1 = inp_1
+    line_1 = line_1.lower()
+    line_1 = line_1.split('\n')
     for line in inp_1:
         print(line)
-        line_1 = line.lower()
-
-        words_list = line.split('\n')
+        words_list = line.split(' ')
         return words_list
 
 def similarity(dict1, dict2):
