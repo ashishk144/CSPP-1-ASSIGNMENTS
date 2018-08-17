@@ -10,6 +10,7 @@ def string_opr(inp_str):
     inp_str = inp_str.lower()
     regex = re.compile('[^a-z ]')
     inp_str = regex.sub('', inp_str)
+    print(inp_str)
     list_ofwords = inp_str.split(' ')
     for index in range(len(list_ofwords)):
         list_ofwords[index] = list_ofwords[index].strip()
