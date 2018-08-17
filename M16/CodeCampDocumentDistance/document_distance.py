@@ -1,14 +1,18 @@
 '''
     Document Distance - A detailed description is given in the PDF
 '''
-# def word_list(inp_1):
-    
+def word_list(inp_1):
+    words_list = []
+    for line in inp_1:
+        line = line.lowercase()
+        words_list = line.split('\n')
+        return words_list
 
-# def similarity(dict1, dict2):
-'''
-    Compute the document distance as given in the PDF
-'''
-
+def similarity(dict1, dict2):
+    '''
+        Compute the document distance as given in the PDF
+    '''
+    print(words_list(dict1))
 
 def load_stopwords(filename):
     '''
@@ -26,9 +30,7 @@ def main():
     '''
     input1 = input()
     input2 = input()
-    print(input1)
-    print(input2)
-    #print(similarity(input1, input2))
+    print(similarity(input1, input2))
 
 if __name__ == '__main__':
     main()
