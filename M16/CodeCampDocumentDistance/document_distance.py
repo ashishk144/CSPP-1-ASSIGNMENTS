@@ -17,7 +17,7 @@ def word_list(inp_1):
             new_dict[char_s] = 1
         else:
             new_dict[char_s] += 1
-    return line_1
+    return new_dict
 
 def similarity(dict1, dict2):
     '''
