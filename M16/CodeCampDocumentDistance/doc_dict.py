@@ -57,6 +57,8 @@ def similarity(dict1, dict2):
     input_1 = string_opr(dict1)
     input_2 = string_opr(dict2)
 
+    print(input_2, input_1)
+
     input_1 = remove_stopword(input_1)
     input_2 = remove_stopword(input_2)
 
