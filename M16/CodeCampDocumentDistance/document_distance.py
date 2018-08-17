@@ -2,16 +2,16 @@
     Document Distance - A detailed description is given in the PDF
 '''
 def word_list(inp_1):
-    words_list = []
     line_1 = inp_1
     line_1 = line_1.lower()
-    line_1 = line_1.strip()
+    line_1 = line_1.replace('.', '').replace(',', '').replace('?', '')
+    line_1 = line_1.split(' ')
     # line_1 = line_1.split('\n')
     # print(line_1)
-    for line in line_1:
-         # print(line)
-         words_list = line.strip()
-    return words_list
+    # for line in line_1:
+    #      print(line)
+    #      words_list = line.strip()
+    return line_1
 
 def similarity(dict1, dict2):
     '''
@@ -27,6 +27,7 @@ def load_stopwords(filename):
     with open(filename, 'r') as filename:
         for line in filename:
             stopwords[line.strip()] = 0
+        print(stopwords)
     return stopwords
 
 def main():
