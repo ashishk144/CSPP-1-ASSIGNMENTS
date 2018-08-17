@@ -36,7 +36,7 @@ def computation(dictionary):
     numerator = sum(value[0]*value[1] for value in dictionary.values())
     denom_1 = math.sqrt(sum(value[0]**2 for value in dictionary.values()))
     denom_2 = math.sqrt(sum(value[1]**2 for value in dictionary.values()))
-    print(numerator, denom_2, denom_1)
+    # print(numerator, denom_2, denom_1)
     return numerator/(denom_1*denom_2)
 
 def similarity(dict1, dict2):
@@ -51,7 +51,7 @@ def similarity(dict1, dict2):
 
     dictionary = {}
     dictionary = word_freq(input_1, 0, dictionary)
-    dictionary = word_freq(input_1, 1, dictionary)
+    dictionary = word_freq(input_2, 1, dictionary)
 
     return computation(dictionary)
 def load_stopwords(filename):
