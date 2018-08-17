@@ -66,7 +66,7 @@ def similarity(dict1, dict2):
         numerator += freq_dict[keys][0] * freq_dict[keys][1]
         deno_1 += freq_dict[keys][0]**2
         deno_2 += freq_dict[keys][1]**2
-    # print(numerator, deno_1, deno_2)
+    #   print(numerator, deno_1, deno_2)
     # denominator = math.sqrt(deno_1) * math.sqrt(deno_2)
     return numerator/(math.sqrt(deno_1) * math.sqrt(deno_2))
 
@@ -75,8 +75,8 @@ def load_stopwords(filename):
         loads stop words from a file and returns a dictionary
     '''
     stopwords = {}
-    with open(filename, 'r') as filename:
-        for line in filename:
+    with open(filename, 'r') as file:
+        for line in file:
             stopwords[line.strip()] = 0
     return stopwords
 
