@@ -37,8 +37,8 @@ def similarity(dict1, dict2):
     '''
         Compute the document distance as given in the PDF
     '''
-    input_1 = clean(dict1)
-    input_2 = clean(dict2)
+    input_1 = string_opr(dict1)
+    input_2 = string_opr(dict2)
 
     input_1 = remove_stopword(input_1)
     input_2 = remove_stopword(input_2)
