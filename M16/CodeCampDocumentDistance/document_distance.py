@@ -55,8 +55,8 @@ def similarity(dict1, dict2):
         deno_2 = 0
         for keys in freq_dict:
             numerator += freq_dict[keys][0] * freq_dict[keys][1]
-            deno_1 += freq_dict[keys][0] ^ freq_dict[keys][0]
-            deno_2 += freq_dict[keys][1] ^ freq_dict[keys][1]
+            deno_1 += freq_dict[keys][0]**freq_dict[keys][0]
+            deno_2 += freq_dict[keys][1]**freq_dict[keys][1]
             print(numerator, deno_1, deno_2)
         denominator = math.sqrt(deno_1) * math.sqrt(deno_2)
         similar = numerator/denominator
