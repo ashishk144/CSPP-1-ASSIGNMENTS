@@ -16,31 +16,32 @@ def word_list(inp_1):
     # for line in line_1:
     #      print(line)
     #      words_list = line.strip()
-    for char_s in line_1:
-        if char_s not in new_dict:
-            new_dict[char_s] = 1
-        else:
-            new_dict[char_s] += 1
-    return new_dict
+    # for char_s in line_1:
+    #     if char_s not in new_dict:
+    #         new_dict[char_s] = 1
+    #     else:
+    #         new_dict[char_s] += 1
+    return line_1
 
 def similarity(dict1, dict2):
     '''
         Compute the document distance as given in the PDF
     '''
-    new_dict1 = word_list(dict1)
-    new_dict2 = word_list(dict2)
+    # new_dict1 = word_list(dict1)
+    # new_dict2 = word_list(dict2)
+    list_1 = word_list(dict1)
+    list_2 = word_list(dict2)
     stop_words = load_stopwords('stopwords.txt')
-    for word_s in stop_words:
-        if word_s in new_dict1:
-            del new_dict1[word_s]
+    new_l1 = list_1 - stop_words
+    new_l2 = list_2 - stop_words
+    # for word_s in stop_words:
+    #     if word_s in new_dict1:
+    #         del new_dict1[word_s]
     
-    for word_s in stop_words:
-        if word_s in new_dict2:
-            del new_dict2[word_s]
-    # print(new_dict1, new_dict2)
-    list_ofdict = new_dict1.keys()
-    list_ofdict2 = new_dict1.values()
-    print(list_ofdict2, list_ofdict)
+    # for word_s in stop_words:
+    #     if word_s in new_dict2:
+    #         del new_dict2[word_s]
+    print(new_l1, new_l2)
 
 def load_stopwords(filename):
     '''
