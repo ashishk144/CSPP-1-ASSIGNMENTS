@@ -10,7 +10,7 @@ def word_list(inp_1):
     .replace('0', '').replace('1', '').replace('2', '')\
     .replace('3', '').replace('4', '').replace('5', '')\
     .replace('6', '').replace('7', '').replace('8', '')\
-    .replace('9', '').replace('-', '')
+    .replace('9', '').replace('-', '').replace('\'', '')
     line_1 = line_1.split(' ')
     # line_1 = line_1.split('\n')
     # print(line_1)
