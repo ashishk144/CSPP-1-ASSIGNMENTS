@@ -57,7 +57,7 @@ def similarity(dict1, dict2):
         elif key_s in new_dict2 and key_s not in new_dict1 and key_s != '':
             freq_dict[key_s] = [0, new_dict2[key_s]]
 
-    # print_dic(freq_dict)
+    print_dic(freq_dict)
 
     numerator = 0
     deno_1 = 0
