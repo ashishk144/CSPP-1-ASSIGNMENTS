@@ -29,7 +29,7 @@ def similarity(dict1, dict2):
     '''
     new_dict1 = word_list(dict1)
     new_dict2 = word_list(dict2)
-    stop_words = load_stopwords(stopwords.txt)
+    stop_words = load_stopwords('stopwords.txt')
     for word_s in stop_words:
         if word_s in new_dict1:
             del new_dict1[word_s]
