@@ -12,7 +12,7 @@ def similarity(dict1, dict2):
     '''
         Compute the document distance as given in the PDF
     '''
-    print(words_list(dict1))
+    return word_list(dict1), word_list(dict2)
 
 def load_stopwords(filename):
     '''
