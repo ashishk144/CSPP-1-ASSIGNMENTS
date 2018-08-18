@@ -74,7 +74,7 @@ def word_freq(list_oflists, diction):
                     diction[words] = [tup]
                 else:
                     ind = 1
-                    diction[words][ind] = tup
+                    diction[words].append(tup)
                     ind += 1
         doc_id += 1
 
