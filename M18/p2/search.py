@@ -45,6 +45,7 @@ def search(search_index, query):
     list_2 = []
     list_1.append([reg.sub('', eachword.strip()) for eachword in query.lower().split(' ')])
     # print(list_1)
+    print(search_index)
     for words in list_1:
         if words in search_index:
             list_2.append(search_index[words])
