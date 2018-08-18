@@ -77,6 +77,7 @@ def word_freq(list_oflists, diction):
                     diction[words].append(tup)
                     ind += 1
         doc_id += 1
+    print(diction)
     return diction
 def build_search_index(docs):
     '''
