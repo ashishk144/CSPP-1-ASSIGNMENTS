@@ -72,7 +72,7 @@ def word_freq(list_oflists, diction):
                 tup = (doc_id, temp_dict[words])
                 if words not in diction:
                     diction[words] = [tup]
-                else:
+                elif doc_id not in diction:
                     ind = 1
                     diction[words].append(tup)
                     ind += 1
