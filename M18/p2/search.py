@@ -46,12 +46,9 @@ def search(search_index, query):
     # print(list_1)
     # print(search_index)
     for words in list_1:
-        if words in search_index:
-            i = len(search_index[words]) - 1
-            while i > 0:
-                list_2.append(search_index[words][i])
-                i -= 1
-    print(list_2)
+        if words in search_index:   
+            list_2.append(search_index[words])
+    return list_2
 
 def process_queries(search_index, queries):
     '''
