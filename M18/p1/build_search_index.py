@@ -62,9 +62,9 @@ def word_freq(list_word, ind, doc_id, diction):
     for each_wrd in list_word:
         if each_wrd != '':
             if each_wrd not in diction:
-                print(each_wrd)
-                diction[each_wrd] = (doc_id, 0)
-            diction[each_wrd][ind][1] += 1
+                # print(each_wrd)
+                diction[each_wrd] = [(doc_id, each_wrd.count(list_word))]
+            # diction[each_wrd][ind][1] += 1
     return diction
 
 def build_search_index(docs):
