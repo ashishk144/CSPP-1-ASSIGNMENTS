@@ -57,7 +57,7 @@ def remove_words(list_ofwords):
             print(each_list)
             while each_word in each_list:
                 each_list.remove(each_word)
-    print(list_ofwords)
+    # print(list_ofwords)
     return list_ofwords
 
 def build_search_index(docs):
