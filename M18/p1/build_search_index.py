@@ -40,6 +40,7 @@ def word_list(text):
         Clean up the text by remvoing all the non alphabet characters
         return a list of words
     '''
+    print(text)
     reg = re.compile('[^a-z ]')
     return [reg.sub('', eachword.strip()) for eachword in text.lower().split(' ')]
 
