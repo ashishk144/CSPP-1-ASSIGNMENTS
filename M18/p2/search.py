@@ -37,7 +37,15 @@ def search(search_index, query):
         collect all the values for the words that are in the search_index
         make a set of doc_id and return
     '''
-    pass
+    query = query.lower()
+    reg = re.compile('[^a-z ]')
+    list_1 = []
+    list_2 = []
+    list_1.append([reg.sub('', query.strip()) query.lower().split(' ')])
+    for words in list_1:
+        if words in search_index:
+            list_2.append(search_index[words])
+    return list_2
 
 def process_queries(search_index, queries):
     '''
@@ -45,7 +53,7 @@ def process_queries(search_index, queries):
         iterate through all the queries and call the search function
         print the results returned by search function
     '''
-    pass
+    
 
 def main():
     '''
