@@ -102,7 +102,7 @@ def build_search_index(docs):
     #     search_index = search_index.update(word_freq(j, k, i, search_index))
     #     k += 1
     # return search_index
-    search_index = word_freq(list_ofdoc)
+    search_index = word_freq(list_ofdoc, search_index)
 # helper function to print the search index
 # use this to verify how the search index looks
 def print_search_index(index):
