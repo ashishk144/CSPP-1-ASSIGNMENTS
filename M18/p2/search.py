@@ -44,10 +44,11 @@ def search(search_index, query):
     list_1 = []
     list_2 = []
     list_1.append([reg.sub('', eachword.strip()) for eachword in query.lower().split(' ')])
-    print(list_1)
+    # print(list_1)
     for words in list_1:
         if words in search_index:
             list_2.append(search_index[words])
+    print list_2
     return list_2
 
 def process_queries(search_index, queries):
