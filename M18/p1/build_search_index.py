@@ -45,8 +45,17 @@ def word_list(text):
     for eachline in text:
         reg = re.compile('[^a-z ]')
         list_1.append([reg.sub('', eachword.strip()) for eachword in eachline.lower().split(' ')])
-    print(list_1)
+    # print(list_1)
     return list_1
+def remove_words(list_ofwords):
+    '''removing all the stopwords'''
+    stop_word = load_stopwords('stopwords.txt')
+    for each_word in stop_word:
+        while each_word in list_ofwords:
+            list_ofwords.remove(each_word)
+    print(list_ofwords)
+    return list_ofwords
+
 def build_search_index(docs):
     '''
         Process the docs step by step as given below
