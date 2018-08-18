@@ -41,9 +41,10 @@ def word_list(text):
         return a list of words
     '''
     #print(text)
+    list_1 = []
     for eachline in text:
         reg = re.compile('[^a-z ]')
-        list_1 = [reg.sub('', eachword.strip()) for eachword in eachline.lower().split(' ')]
+        list_1.append([reg.sub('', eachword.strip()) for eachword in eachline.lower().split(' ')])
     print(list_1)
     return list_1
 def build_search_index(docs):
