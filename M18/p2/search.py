@@ -41,11 +41,10 @@ def search(search_index, query):
     '''
     query = query.lower()
     reg = re.compile('[^a-z ]')
-    list_1 = []
     list_2 = []
-    list_1.append([reg.sub('', eachword.strip()) for eachword in query.lower().split(' ')])
+    list_1 = ([reg.sub('', eachword.strip()) for eachword in query.lower().split(' ')])
     # print(list_1)
-    print(search_index)
+    # print(search_index)
     for words in list_1:
         if words in search_index:
             list_2.append(search_index[words])
