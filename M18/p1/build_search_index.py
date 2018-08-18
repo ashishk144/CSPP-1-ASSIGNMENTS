@@ -85,7 +85,7 @@ def main():
     for i in range(lines):
         documents.append(input())
         i += 1
-
+    print(documents)
     # call print to display the search index
     print_search_index(build_search_index(documents))
 
