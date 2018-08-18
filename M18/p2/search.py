@@ -47,7 +47,7 @@ def search(search_index, query):
     # print(search_index)
     for words in list_1:
         if words in search_index:
-            i = len(search_index[words] - 1)
+            i = len(search_index[words]) - 1
             while i > 0:
                 list_2.append(search_index[words][i])
                 i += 1
