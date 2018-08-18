@@ -71,7 +71,7 @@ def word_freq(list_word, ind, doc_id, diction):
                 tup = (doc_id, temp_dict[words])
                 diction[words] = tup
             tup = (doc_id, temp_dict[words])
-            diction[word][ind] = tup
+            diction[words][ind] = tup
 def build_search_index(docs):
     '''
         Process the docs step by step as given below
