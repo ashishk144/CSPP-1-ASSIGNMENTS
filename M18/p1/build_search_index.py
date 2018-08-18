@@ -52,13 +52,19 @@ def remove_words(list_ofwords):
     '''removing all the stopwords'''
     stop_word = load_stopwords('stopwords.txt')
     for each_word in stop_word:
-        # print(each_word)
         for each_list in list_ofwords:
-            # print(each_list)
             while each_word in each_list:
                 each_list.remove(each_word)
-    # print(list_ofwords)
     return list_ofwords
+
+def word_freq(list_word, ind, doc_id, diction):
+    '''finding the word frequency'''
+    for each_wrd in lis_word:
+        if each_wrd != '':
+            if each_wrd not in diction:
+                diction[each_wrd] = (doc_id, 0)
+            diction[each_wrd][ind][1] += 1
+    return diction
 
 def build_search_index(docs):
     '''
@@ -76,8 +82,13 @@ def build_search_index(docs):
         # add or update the words of the doc to the search index
 
     # return search index
-    print(remove_words(word_list(docs)))
-
+    search_index = {}
+    list_ofdoc = remove_words(word_list(docs))
+    for i, j in enumerate(list_ofdoc):
+        k = 0
+        search_index = search_index.append(word_freq(j, k, i, search_index))
+        k += 1
+    return search_index
 # helper function to print the search index
 # use this to verify how the search index looks
 def print_search_index(index):
