@@ -43,12 +43,13 @@ def search(search_index, query):
     reg = re.compile('[^a-z ]')
     list_2 = []
     list_1 = ([reg.sub('', eachword.strip()) for eachword in query.lower().split(' ')])
-    print(list_1)
     # print(search_index)
     for words in list_1:
         if words in search_index:
-            list_2.append(search_index[words])
-    return list_2
+            for lists in search_index[words]:
+                list_2.append(lists[0])
+    set_1 = set(list_2)
+    return set_1
 
 def process_queries(search_index, queries):
     '''
