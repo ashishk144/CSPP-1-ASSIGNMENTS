@@ -59,12 +59,12 @@ def remove_words(list_ofwords):
 
 def word_freq(list_word, ind, doc_id, diction):
     '''finding the word frequency'''
+    c = 0
     for each_wrd in list_word:
         if each_wrd != '':
             if each_wrd not in diction:
-                # print(each_wrd)
-                diction[each_wrd] = [(doc_id, list_word.count(each_wrd))]
-            # diction[each_wrd][ind][1] += 1
+                diction[each_wrd] = [(doc_id, c)]
+            diction[each_wrd][ind] = [(doc_id, c += 1)]
     return diction
 
 def build_search_index(docs):
