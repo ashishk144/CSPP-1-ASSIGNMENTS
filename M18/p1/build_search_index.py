@@ -57,20 +57,26 @@ def remove_words(list_ofwords):
                 each_list.remove(each_word)
     return list_ofwords
 
-def word_freq(list_word, ind, doc_id, diction):
+def word_freq(list_oflists, diction):
     '''finding the word frequency'''
-    temp_dict = {}
-    for each_wrd in list_word:
-        if each_wrd != '':
-            if each_wrd not in temp_dict:
-                temp_dict[each_wrd] = 1
-            temp_dict[each_wrd] += 1
-    for words in list_word:
-        if words != '':
-            tup = (doc_id, temp_dict[words])
-            if words not in diction:
-                diction[words] = [tup]
-            diction[words][ind] = tup
+    doc_id = 0
+    for each_lists in list_oflists:
+        temp_dict = {}
+        for each_wrd in list_word:
+            if each_wrd != '':
+                if each_wrd not in temp_dict:
+                    temp_dict[each_wrd] = 1
+                temp_dict[each_wrd] += 1
+        for words in list_word:
+            if words != '':
+                tup = (doc_id, temp_dict[words])
+                if words not in diction:
+                    diction[words] = [tup]
+                else:
+                    ind = 1
+                    diction[words][ind] = tup
+                    ind += 1
+        doc_id += 1
 
     return diction
 def build_search_index(docs):
@@ -91,11 +97,12 @@ def build_search_index(docs):
     # return search index
     search_index = {}
     list_ofdoc = remove_words(word_list(docs))
-    for i, j in enumerate(list_ofdoc):
-        k = 0
-        search_index = search_index.update(word_freq(j, k, i, search_index))
-        k += 1
-    return search_index
+    # for i, j in enumerate(list_ofdoc):
+    #     k = 0
+    #     search_index = search_index.update(word_freq(j, k, i, search_index))
+    #     k += 1
+    # return search_index
+    search_index = word_freq(list_ofdoc)
 # helper function to print the search index
 # use this to verify how the search index looks
 def print_search_index(index):
