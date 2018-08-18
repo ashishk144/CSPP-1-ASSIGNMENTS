@@ -69,8 +69,9 @@ def word_freq(list_word, ind, doc_id, diction):
         if words != '':
             if words not in diction:
                 tup = (doc_id, temp_dict[words])
-                diction[words][ind] = tup
-
+                diction[words] = tup
+            tup = (doc_id, temp_dict[words])
+            diction[word][ind] = tup
 def build_search_index(docs):
     '''
         Process the docs step by step as given below
