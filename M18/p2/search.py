@@ -51,7 +51,7 @@ def search(search_index, query):
             while i > 0:
                 list_2.append(search_index[words][i])
                 i += 1
-    print list_2
+    print(list_2)
 
 def process_queries(search_index, queries):
     '''
