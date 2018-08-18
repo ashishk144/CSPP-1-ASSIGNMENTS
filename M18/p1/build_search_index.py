@@ -76,7 +76,7 @@ def build_search_index(docs):
         # add or update the words of the doc to the search index
 
     # return search index
-    print(word_list(docs))
+    # print(word_list(docs))
 
 # helper function to print the search index
 # use this to verify how the search index looks
