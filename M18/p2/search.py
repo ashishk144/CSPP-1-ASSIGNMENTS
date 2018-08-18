@@ -29,6 +29,8 @@
     Note: PyLint score need not be 10/10. Anything above 9.5 is good.
 '''
 
+import re
+
 def search(search_index, query):
     '''
         function to search through the search index and return the results
