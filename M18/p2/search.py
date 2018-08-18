@@ -47,8 +47,7 @@ def search(search_index, query):
     # print(search_index)
     for words in list_1:
         if words in search_index:
-            list_2.append(search_index[words])
-    print(list_2)
+            list_2 = search_index[words]
     return list_2
 
 def process_queries(search_index, queries):
