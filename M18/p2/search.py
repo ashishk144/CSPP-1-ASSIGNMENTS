@@ -46,10 +46,10 @@ def search(search_index, query):
     # print(list_1)
     # print(search_index)
     for words in list_1:
-        if words in search_index:   
-            list_2.append(search_index[words])
-    set_1 = set(list_2)
-    
+        if words in search_index:
+            if words not in list_2:
+                list_2.append(search_index[words])
+    print(list_2)
 
 def process_queries(search_index, queries):
     '''
