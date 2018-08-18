@@ -52,12 +52,12 @@ def remove_words(list_ofwords):
     '''removing all the stopwords'''
     stop_word = load_stopwords('stopwords.txt')
     for each_word in stop_word:
-        print(each_word)
+        # print(each_word)
         for each_list in list_ofwords:
-            print(each_list)
+            # print(each_list)
             while each_word in each_list:
                 each_list.remove(each_word)
-    print(list_ofwords)
+    # print(list_ofwords)
     return list_ofwords
 
 def build_search_index(docs):
@@ -76,7 +76,7 @@ def build_search_index(docs):
         # add or update the words of the doc to the search index
 
     # return search index
-    # print(word_list(docs))
+    print(remove_words(word_list(docs)))
 
 # helper function to print the search index
 # use this to verify how the search index looks
@@ -101,9 +101,8 @@ def main():
     for i in range(lines):
         documents.append(input())
         i += 1
-
     # call print to display the search index
-    print_search_index(build_search_index(documents))
+    # print_search_index(build_search_index(documents))
 
 if __name__ == '__main__':
     main()
