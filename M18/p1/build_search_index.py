@@ -86,7 +86,7 @@ def build_search_index(docs):
     list_ofdoc = remove_words(word_list(docs))
     for i, j in enumerate(list_ofdoc):
         k = 0
-        search_index = search_index.add(word_freq(j, k, i, search_index))
+        search_index = search_index.update(word_freq(j, k, i, search_index))
         k += 1
     return search_index
 # helper function to print the search index
