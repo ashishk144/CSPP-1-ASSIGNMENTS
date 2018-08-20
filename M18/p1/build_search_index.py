@@ -61,15 +61,15 @@ def word_freq(list_oflists, diction):
     '''finding the word frequency'''
     doc_id = 0
     for each_lists in list_oflists:
-        temp_dict = {}
-        for each_wrd in each_lists:
-            if each_wrd != '':
-                if each_wrd not in temp_dict:
-                    temp_dict[each_wrd] = 0
-                temp_dict[each_wrd] += 1
+        # temp_dict = {}
+        # for each_wrd in each_lists:
+        #     if each_wrd != '':
+        #         if each_wrd not in temp_dict:
+        #             temp_dict[each_wrd] = 0
+        #         temp_dict[each_wrd] += 1
         for words in each_lists:
             if words != '':
-                tup = (doc_id, temp_dict[words])
+                tup = (doc_id, each_lists.count(words))
                 if words not in diction:
                     diction[words] = [tup]
                 elif tup not in diction[words]:
