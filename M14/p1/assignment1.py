@@ -69,15 +69,15 @@ def get_story_string():
     """
     Returns: a joke in encrypted text.
     """
-    f = open("story.txt", "r")
-    story = str(f.read())
-    f.close()
+    file_toopen = open("story.txt", "r")
+    story = str(file_toopen.read())
+    file_toopen.close()
     return story
 
 WORDLIST_FILENAME = 'words.txt'
 
-class Message(object):
-    ### DO NOT MODIFY THIS METHOD ###
+class Message():
+    '''Initializing Message class'''
     def __init__(self, text):
         '''
         Initializes a Message object
@@ -116,17 +116,17 @@ class Message(object):
         character shifted down the alphabet by the input shift. The dictionary
         should have 52 keys of all the uppercase letters and all the lowercase
         letters only.
-        shift (integer): the amount by which to shift every letter of the 
+        shift (integer): the amount by which to shift every letter of the
         alphabet. 0 <= shift < 26
 
-        Returns: a dictionary mapping a letter (string) to 
-                 another letter (string). 
+        Returns: a dictionary mapping a letter (string) to
+                 another letter (string).
         '''
         shifted_dict = {}
 
-        for each_char in range(97,123):
+        for each_char in range(97, 123):
             shifted_dict[chr(each_char)] = chr(97+(each_char+shift-97)%26)
-        for each_char in range(65,97):
+        for each_char in range(65, 97):
             shifted_dict[chr(each_char)] = chr(97+(each_char+shift-97)%26)
 
         return shifted_dict
