@@ -18,8 +18,6 @@
 
 import string
 
-
-
 def load_words(file_name):
     '''
     file_name (string): the name of the file containing
