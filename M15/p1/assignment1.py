@@ -141,7 +141,8 @@ class Message(object):
                 continue
             else:
                 new_msg.append(self.build_shift_dict(shift)[i])
-        return ''.join(new_msg)
+        self.message_text = ''.join(new_msg)
+        return self.message_text
 
 class PlaintextMessage(Message):
     ''' PlaintextMessage class '''
@@ -258,7 +259,7 @@ class CiphertextMessage(Message):
         decrypt_message = []
         for _ in range(0, 27):
             decrypt_message.append(self.apply_shift(1))
-        return (decrypt_message.index(max(decrypt_message, key = self.no_ofvalidwords)) + 1,\
+        return (24 - decrypt_message.index(max(decrypt_message, key = self.no_ofvalidwords)) + 1,\
             max(decrypt_message, key = self.no_ofvalidwords))
 
 ### DO NOT MODIFY THIS METHOD ###
