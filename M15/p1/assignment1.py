@@ -43,7 +43,7 @@ def is_word(word_list, word):
     False
     '''
     word = word.lower()
-    word = word.strip(" !@#$%^&*()-_+={}[]|\:;'<>?,./\"")
+    word = word.strip(" !@#$%^&*()-_+={}[]|:;'<>?,./\"")
     return word in word_list
 
 ### DO NOT MODIFY THIS FUNCTION ###
@@ -244,10 +244,10 @@ class CiphertextMessage(Message):
         and find the "best" one. We will define "best" as the shift that
         creates the maximum number of real words when we use apply_shift(shift)
         on the message text. If s is the original shift value used to encrypt
-        the message, then we would expect 26 - s to be the best shift value 
+        the message, then we would expect 26 - s to be the best shift value
         for decrypting it.
 
-        Note: if multiple shifts are  equally good such that they all create 
+        Note: if multiple shifts are  equally good such that they all create
         the maximum number of you may choose any of those shifts (and their
         corresponding decrypted messages) to return
 
@@ -259,8 +259,8 @@ class CiphertextMessage(Message):
         decrypt_message = []
         for _ in range(0, 27):
             decrypt_message.append(self.apply_shift(1))
-        return (24 - decrypt_message.index(max(decrypt_message, key = self.no_ofvalidwords)) + 1,\
-            max(decrypt_message, key = self.no_ofvalidwords))
+        return (24 - decrypt_message.index(max(decrypt_message, key=self.no_ofvalidwords)) + 1,\
+            max(decrypt_message, key=self.no_ofvalidwords))
 
 ### DO NOT MODIFY THIS METHOD ###
 def main():
@@ -270,4 +270,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
