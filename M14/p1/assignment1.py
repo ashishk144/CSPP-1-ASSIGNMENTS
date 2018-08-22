@@ -122,14 +122,15 @@ class Message():
         Returns: a dictionary mapping a letter (string) to
                  another letter (string).
         '''
-        self.shifted_dict = {}
+        shifted_dict = {}
 
         for each_char in range(97, 123):
-            self.shifted_dict[chr(each_char)] = chr(97+(each_char+shift-97)%26)
+            shifted_dict[chr(each_char)] = chr(97+(each_char+shift-97)%26)
+        
         for each_char in range(65, 97):
-            self.shifted_dict[chr(each_char)] = chr(97+(each_char+shift-97)%26)
+            shifted_dict[chr(each_char)] = chr(65+(each_char+shift-65)%26)
 
-        return self.shifted_dict
+        return shifted_dict
 
     def apply_shift(self, shift):
         '''
