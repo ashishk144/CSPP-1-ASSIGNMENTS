@@ -129,7 +129,7 @@ class Message():
         for each_char in range(65, 97):
             shifted_dict[chr(each_char)] = chr(97+(each_char+shift-97)%26)
 
-        return shifted_dict
+        return self.shifted_dict
 
     def apply_shift(self, shift):
         '''
