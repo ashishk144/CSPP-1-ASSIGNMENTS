@@ -125,9 +125,9 @@ class Message():
         self.shifted_dict = {}
 
         for each_char in range(97, 123):
-            shifted_dict[chr(each_char)] = chr(97+(each_char+shift-97)%26)
+            self.shifted_dict[chr(each_char)] = chr(97+(each_char+shift-97)%26)
         for each_char in range(65, 97):
-            shifted_dict[chr(each_char)] = chr(97+(each_char+shift-97)%26)
+            self.shifted_dict[chr(each_char)] = chr(97+(each_char+shift-97)%26)
 
         return self.shifted_dict
 
