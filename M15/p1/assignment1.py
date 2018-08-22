@@ -218,6 +218,7 @@ class PlaintextMessage(Message):
 # Helper code ends
 
 class CiphertextMessage(Message):
+    '''Initiating Cipher Class'''
     def __init__(self, text):
         '''
         Initializes a CiphertextMessage object
@@ -232,6 +233,7 @@ class CiphertextMessage(Message):
         Message.__init__(self, text)
 
     def no_ofvalidwords(self, decrypted_string):
+        '''Finding the valid word count'''
         valid_wordcount = 0
         for word in decrypted_string.split(' '):
             if is_word(self.valid_words, word):
