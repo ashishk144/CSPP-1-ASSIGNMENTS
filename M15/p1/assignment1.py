@@ -217,7 +217,6 @@ class PlaintextMessage(Message):
 # Helper code ends
 
 class CiphertextMessage(Message):
-    ''' CiphertextMessage class '''
     def __init__(self, text):
         '''
         Initializes a CiphertextMessage object
@@ -228,8 +227,15 @@ class CiphertextMessage(Message):
             self.message_text (string, determined by input text)
             self.valid_words (list, determined using helper function load_words)
         '''
-        self.text = text
-        
+
+        Message.__init__(self, text)
+
+    def no_ofvalidwords(self, decrypted_string):
+        valid_wordcount = 0
+        for word in decrypted_string.split(' '):
+            if is_word(self.valid_words, word):
+                valid_wordcount += 1
+        return valid_wordcount
 
     def decrypt_message(self):
         '''
@@ -237,18 +243,23 @@ class CiphertextMessage(Message):
         and find the "best" one. We will define "best" as the shift that
         creates the maximum number of real words when we use apply_shift(shift)
         on the message text. If s is the original shift value used to encrypt
-        the message, then we would expect 26 - s to be the best shift value
+        the message, then we would expect 26 - s to be the best shift value 
         for decrypting it.
 
-        Note: if multiple shifts are  equally good such that they all create
+        Note: if multiple shifts are  equally good such that they all create 
         the maximum number of you may choose any of those shifts (and their
         corresponding decrypted messages) to return
 
         Returns: a tuple of the best shift value used to decrypt the message
         and the decrypted message text using that shift value
         '''
-        pass
+        # mc = 0
 
+        decrypt_message = []
+        for _ in range(0, 27):
+            decrypt_message.append(self.apply_shift(1))
+        return (decrypt_message.index(max(decrypt_message, key = self.no_ofvalidwords)) + 1,\
+            max(decrypt_message, key = self.no_ofvalidwords))
 
 ### DO NOT MODIFY THIS METHOD ###
 def main():
