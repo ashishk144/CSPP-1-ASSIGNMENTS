@@ -127,7 +127,7 @@ class Message():
         for each_char in range(97, 123):
             shifted_dict[chr(each_char)] = chr(97+(each_char+shift-97)%26)
         
-        for each_char in range(65, 97):
+        for each_char in range(65, 92):
             shifted_dict[chr(each_char)] = chr(65+(each_char+shift-65)%26)
 
         return shifted_dict
