@@ -122,7 +122,7 @@ class Message():
         Returns: a dictionary mapping a letter (string) to
                  another letter (string).
         '''
-        shifted_dict = {}
+        self.shifted_dict = {}
 
         for each_char in range(97, 123):
             shifted_dict[chr(each_char)] = chr(97+(each_char+shift-97)%26)
