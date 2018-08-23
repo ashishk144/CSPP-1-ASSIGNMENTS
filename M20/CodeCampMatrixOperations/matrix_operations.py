@@ -1,3 +1,4 @@
+'''Matrix methods'''
 def mult_matrix(matr_1, matr_2):
     '''
         check if the matrix1 columns = matrix2 rows
@@ -11,10 +12,10 @@ def mult_matrix(matr_1, matr_2):
         for i in range(len(matr_1)):
             lst = []
             for j in range(len(matr_2[0])):
-                s = 0
+                sum_count = 0
                 for k in range(len(matr_1[0])):
-                    s += matr_1[i][k] * matr_2[k][j]
-                lst.append(s)
+                    sum_count += matr_1[i][k] * matr_2[k][j]
+                lst.append(sum_count)
             result_mul.append(lst)
         return result_mul
     print("Error: Matrix shapes invalid for mult")
@@ -31,10 +32,10 @@ def add_matrix(matr_1, matr_2):
     result = []
     if len(matr_1) == len(matr_2) and len(matr_1[0]) == len(matr_2[0]):
         for i in range(len(matr_1)):
-            l = []
+            l_1 = []
             for j in range(len(matr_2[0])):
-                l.append(matr_1[i][j] + matr_2[i][j])
-            result.append(l)
+                l_1.append(matr_1[i][j] + matr_2[i][j])
+            result.append(l_1)
         return result
     print("Error: Matrix shapes invalid for addition")
     return None
@@ -71,10 +72,10 @@ def main():
     # read matrix 2
     matrix_2 = read_matrix()
     # add matrix 1 and matrix 2
-    if matrix_1 != None and matrix_2 != None:
+    if matrix_1 is not None and matrix_2 is not None:
         print(add_matrix(matrix_1, matrix_2))
     # multiply matrix 1 and matrix 2
-    if matrix_1 != None and matrix_2 != None:
+    if matrix_1 is not None and matrix_2 is not None:
         print(mult_matrix(matrix_1, matrix_2))
     # matrix_1 = input()
     # matrix_2 = input()
