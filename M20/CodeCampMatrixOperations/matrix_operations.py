@@ -17,7 +17,7 @@ def mult_matrix(m1, m2):
                 lst.append(s)
             result_mul.append(lst)
         return (result_mul)
-    print("Error: Matrix shapes invalid for addition")
+    print("Error: Matrix shapes invalid for mult")
     return None
 
 def add_matrix(m1, m2):
