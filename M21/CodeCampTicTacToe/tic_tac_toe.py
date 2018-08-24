@@ -22,6 +22,11 @@ def check_cols(matrix_col):
         return store_val[0]
     return 0
 
+def check_matrix(mat_check):
+    for each_list in new_matrix:
+        if 'x' not in each_list or 'o' not in each_list or '.' not in each_list:
+            return False
+    return True
 
 def main():
     '''Taking input and delivering output'''
@@ -31,20 +36,19 @@ def main():
     for _ in range(3):
         line = input()
         new_matrix.append(line.split(' '))
-    for each_list in new_matrix:
-        if 'x' not in each_list or 'o' not in each_list or '.' not in each_list:
-            print("Invalid Input")
-            break
-    if check_rows(new_matrix):
-        correct_count += 1
-        out_put += check_rows(new_matrix)
-    if check_cols(new_matrix):
-        correct_count += 1
-        out_put += check_cols(new_matrix)
+    if check_matrix(new_matrix):
+        if check_rows(new_matrix):
+            correct_count += 1
+            out_put += check_rows(new_matrix)
+        if check_cols(new_matrix):
+            correct_count += 1
+            out_put += check_cols(new_matrix)
 
-    if correct_count == 1:
-        print(out_put)
+        if correct_count == 1:
+            print(out_put)
+        else:
+            print('Invalid Game')
     else:
-        print('Invalid Game')
+        print('Invalid Input')
 if __name__ == '__main__':
     main()
