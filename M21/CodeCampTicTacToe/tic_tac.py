@@ -46,6 +46,7 @@ def diagonal_ltor(game_grid):
                 win_count += 1
     if win_count == 3:
         return win_flag
+    return None
 
 def diagonal_rtol(game_grid):
     grid_len = len(game_grid)
@@ -57,6 +58,8 @@ def diagonal_rtol(game_grid):
                 win_count += 1
             else:
                 break
+    return None
+
 def play_game(game_matrix):
     return is_valid_game(game_matrix) or horizontal_check(game_matrix) or \
     vertical_check(game_matrix) or diagonal_ltor(game_matrix) or\
