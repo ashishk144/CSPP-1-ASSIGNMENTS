@@ -14,7 +14,7 @@ def check_cols(matrix_col):
     for i in range(1, len(matrix_col)):
         count = 0
         for j in range(len(matrix_col[i])):
-            if matrix_col[j][i-1] == matrix_col[j][i]:
+            if matrix_col[j][i-1] == matrix_col[i][j]:
                 count += 1
             if count == 2:
                 store_val.append(matrix_col[j][i])
