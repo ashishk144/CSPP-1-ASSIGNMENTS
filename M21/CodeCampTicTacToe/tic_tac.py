@@ -58,6 +58,8 @@ def diagonal_rtol(game_grid):
                 win_count += 1
             else:
                 break
+    if win_count == 3:
+        return win_flag
     return None
 
 def play_game(game_matrix):
