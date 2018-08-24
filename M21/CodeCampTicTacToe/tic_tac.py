@@ -65,5 +65,5 @@ def play_game(game_matrix):
 grid_lines = 3
 new_matrix = []
 for _ in range(grid_lines):
-    new_matrix.append(line.input().split(' '))
+    new_matrix.append(input().split(' '))
 print(play_game(new_matrix))
