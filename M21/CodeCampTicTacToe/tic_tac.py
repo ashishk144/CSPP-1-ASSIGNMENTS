@@ -68,8 +68,8 @@ def play_game(game_matrix):
     vertical_check(game_matrix) or diagonal_ltor(game_matrix) or\
     diagonal_rtol(game_matrix) or 'draw'
 
-grid_lines = 3
-new_matrix = []
-for _ in range(grid_lines):
-    new_matrix.append(input().split(' '))
-print(play_game(new_matrix))
+GRIDLINES = 3
+MATRIX = []
+for _ in range(GRIDLINES):
+    MATRIX.append(input().split(' '))
+print(play_game(MATRIX))
