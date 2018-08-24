@@ -23,7 +23,7 @@ def horizontal_check(game_grid):
 
 def vertical_check(game_matrix):
     mat_len = len(game_matrix)
-    win_flag = game_grid[0][0]
+    win_flag = game_matrix[0][0]
     win_count = 0
     for i in range(mat_len):
         win_count = 0
