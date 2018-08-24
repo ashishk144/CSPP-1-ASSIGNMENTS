@@ -27,7 +27,7 @@ def check_matrix(mat_check):
     for each_list in mat_check:
         # print(each_list)
         for each_element in each_list:
-            if each_element == 'x' or each_element == 'o' or each_element == '.':
+            if each_element in ('x', 'o', '.'):
                 count_elem += 1
     if count_elem == 9:
         return True
