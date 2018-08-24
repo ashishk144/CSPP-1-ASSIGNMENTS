@@ -68,7 +68,7 @@ def main():
             print(out_put)
         # if correct_count == 0:
         #     print('draw')
-        if correct_count > 2:
+        else:
             print('invalid game')
     else:
         print('invalid input')
