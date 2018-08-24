@@ -24,6 +24,7 @@ def check_cols(matrix_col):
 
 def check_matrix(mat_check):
     for each_list in mat_check:
+        print(each_list)
         if 'x' not in each_list or 'o' not in each_list or '.' not in each_list\
         or ' ' not in each_list:
             return False
