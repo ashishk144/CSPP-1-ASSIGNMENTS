@@ -16,8 +16,8 @@ def check_cols(matrix_col):
         for j in range(len(matrix_col[i])):
             if matrix_col[j][i-1] == matrix_col[j][i]:
                 count += 0
-        if count == 2:
-            store_val.append(matrix_col[j][i])
+            if count == 2:
+                store_val.append(matrix_col[j][i])
     if len(store_val) == 1:
         return store_val[0]
     return 0
@@ -62,7 +62,7 @@ def main():
             correct_count += 1
             out_put += check_cols(new_matrix)
         if check_diag(new_matrix):
-           correct_count += 1
+            correct_count += 1
         # print(correct_count)
         if correct_count == 1:
             print(out_put)
