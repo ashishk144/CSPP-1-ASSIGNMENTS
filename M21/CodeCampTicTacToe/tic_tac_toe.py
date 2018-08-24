@@ -25,8 +25,9 @@ def check_cols(matrix_col):
 def check_matrix(mat_check):
     for each_list in mat_check:
         # print(each_list)
-        if 'x' in each_list or 'o' in each_list or '.' in each_list:
-            return True
+        for each_element in each_list:
+            if each_element == 'x' or each_element == 'o' or each_element == '.':
+                return True
     return False
 
 def main():
