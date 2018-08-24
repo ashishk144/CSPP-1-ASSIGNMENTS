@@ -48,8 +48,8 @@ def main():
         if check_cols(new_matrix):
             correct_count += 1
             out_put += check_cols(new_matrix)
-        if check_diag(new_matrix):
-           correct_count += 1 
+        # if check_diag(new_matrix):
+        #    correct_count += 1 
         if correct_count == 1:
             print(out_put)
         if correct_count == 0:
