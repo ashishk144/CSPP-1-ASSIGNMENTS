@@ -45,14 +45,14 @@ def main():
         if check_rows(new_matrix):
             correct_count += 1
             out_put += check_rows(new_matrix)
-        elif check_cols(new_matrix):
+        if check_cols(new_matrix):
             correct_count += 1
             out_put += check_cols(new_matrix)
-        elif check_diag(new_matrix):
+        if check_diag(new_matrix):
            correct_count += 1 
         if correct_count == 1:
             print(out_put)
-        elif correct_count == 0:
+        if correct_count == 0:
             print('draw')
         else:
             print('invalid game')
