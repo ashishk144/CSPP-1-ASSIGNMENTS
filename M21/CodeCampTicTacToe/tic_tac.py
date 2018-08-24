@@ -42,6 +42,7 @@ def diagonal_ltor(game_grid):
     win_flag = game_grid[0][0]
     win_count = 0
     if win_flag != '.':
+        continue
         for i in range(grid_len):
             if game_grid[i][i] == win_flag:
                 win_count += 1
@@ -54,6 +55,7 @@ def diagonal_rtol(game_grid):
     win_flag = game_grid[0][-1]
     win_count = 0
     if win_flag != '.':
+        continue
         for i in range(grid_len):
             if game_grid[i][-i-1] == win_flag:
                 win_count += 1
