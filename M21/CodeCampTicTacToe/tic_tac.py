@@ -1,6 +1,7 @@
 '''Tic Tac Toe Game'''
 
 def is_validgame(game_grid):
+    '''Is valid game'''
     x_count, o_count = 0, 0
     for each_row in game_grid:
         for each_val in each_row:
@@ -18,12 +19,14 @@ def is_validgame(game_grid):
     return None
 
 def horizontal_check(game_grid):
+    '''checking for each row'''
     for each_row in game_grid:
         if each_row.count(each_row[0]) == 3 and each_row[0] != '.':
             return each_row[0]
     return None
 
 def vertical_check(game_matrix):
+    '''checking for each column'''
     mat_len = len(game_matrix)
     win_flag = game_matrix[0][0]
     win_count = 0
@@ -42,6 +45,7 @@ def vertical_check(game_matrix):
     return None
 
 def diagonal_ltor(game_grid):
+    '''checking diagonally from left to right'''
     grid_len = len(game_grid)
     win_flag = game_grid[0][0]
     win_count = 0
@@ -54,6 +58,7 @@ def diagonal_ltor(game_grid):
     return None
 
 def diagonal_rtol(game_grid):
+    '''checking diagonally from right to left'''
     grid_len = len(game_grid)
     win_flag = game_grid[0][-1]
     win_count = 0
@@ -68,6 +73,7 @@ def diagonal_rtol(game_grid):
     return None
 
 def play_game(game_matrix):
+    '''Game function to return the value'''
     return is_validgame(game_matrix) or horizontal_check(game_matrix) or \
     vertical_check(game_matrix) or diagonal_ltor(game_matrix) or\
     diagonal_rtol(game_matrix) or 'draw'
