@@ -38,10 +38,10 @@ def check_diag(mat_diag):
     for i in range(1, len(mat_diag)):
         count = 0
         for j in range(1, len(mat_diag[i])):
-            if mat_diag[j-1][i-1] == mat_diag[j][i]:
+            if mat_diag[i][i] == mat_diag[j][j]:
                 count += 0
-        if count == 2:
-            store_val.append(mat_diag[j][i])
+            if count == 2:
+                store_val.append(mat_diag[i][i])
     if len(store_val) == 1:
         return store_val[0]
     return 0
