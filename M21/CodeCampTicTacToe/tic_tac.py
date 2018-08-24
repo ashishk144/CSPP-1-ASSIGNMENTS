@@ -27,6 +27,7 @@ def vertical_check(game_matrix):
         win_count = 0
         win_flag = game_matrix[0][i]
         if win_flag != '.':
+            continue
             for j in range(mat_len):
                 if game_matrix[j][i] == win_flag:
                     win_count += 1
