@@ -15,7 +15,7 @@ def check_cols(matrix_col):
         count = 0
         for j in range(len(matrix_col[i])):
             if matrix_col[j][i-1] == matrix_col[j][i]:
-                count += 0
+                count += 1
             if count == 2:
                 store_val.append(matrix_col[j][i])
     if len(store_val) == 1:
@@ -39,7 +39,7 @@ def check_diag(mat_diag):
         count = 0
         for j in range(1, len(mat_diag[i])):
             if mat_diag[i][i] == mat_diag[j][j]:
-                count += 0
+                count += 1
             if count == 2:
                 store_val.append(mat_diag[i][i])
     if len(store_val) == 1:
