@@ -35,13 +35,13 @@ def check_matrix(mat_check):
 
 def check_diag(mat_diag):
     store_val = []
-    for i in range(1, len(matrix_col)):
+    for i in range(1, len(mat_diag)):
         count = 0
-        for j in range(1, len(matrix_col[i])):
-            if matrix_col[j-1][i-1] == matrix_col[j][i]:
+        for j in range(1, len(mat_diag[i])):
+            if mat_diag[j-1][i-1] == mat_diag[j][i]:
                 count += 0
         if count == 2:
-            store_val.append(matrix_col[j][i])
+            store_val.append(mat_diag[j][i])
     if len(store_val) == 1:
         return store_val[0]
     return 0
