@@ -63,7 +63,7 @@ def diagonal_rtol(game_grid):
     return None
 
 def play_game(game_matrix):
-    return is_valid_game(game_matrix) or horizontal_check(game_matrix) or \
+    return is_validgame(game_matrix) or horizontal_check(game_matrix) or \
     vertical_check(game_matrix) or diagonal_ltor(game_matrix) or\
     diagonal_rtol(game_matrix) or 'draw'
 
