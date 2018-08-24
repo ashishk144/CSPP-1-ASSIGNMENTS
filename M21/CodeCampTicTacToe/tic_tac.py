@@ -27,11 +27,11 @@ def vertical_check(game_matrix):
         win_count = 0
         win_flag = game_grid[0][i]
         if win_flag != '.':
-        for j in range(mat_len):
-            if game_matrix[j][i] == win_flag:
-                win_count += 1
-            else:
-                break
+            for j in range(mat_len):
+                if game_matrix[j][i] == win_flag:
+                    win_count += 1
+                else:
+                    break
     if win_count == 3:
         return win_flag
     return None
@@ -57,7 +57,6 @@ def diagonal_rtol(game_grid):
                 win_count += 1
             else:
                 break
-
 def play_game(game_matrix):
     return is_valid_game(game_matrix) or horizontal_check(game_matrix) or \
     vertical_check(game_matrix) or diagonal_ltor(game_matrix) or\
