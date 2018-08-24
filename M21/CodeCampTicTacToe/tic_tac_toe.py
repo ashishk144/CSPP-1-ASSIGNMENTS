@@ -23,7 +23,7 @@ def check_cols(matrix_col):
     return 0
 
 def check_matrix(mat_check):
-    for each_list in new_matrix:
+    for each_list in mat_check:
         if 'x' not in each_list or 'o' not in each_list or '.' not in each_list:
             return False
     return True
