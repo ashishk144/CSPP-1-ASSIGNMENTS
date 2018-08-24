@@ -15,6 +15,8 @@ def is_validgame(game_grid):
     if abs(x_count - o_count) != 1:
         return "invalid game"
 
+    return None
+
 def horizontal_check(game_grid):
     for each_row in game_grid:
         if each_row.count(each_row[0]) == 3 and each_row[0] != '.':
