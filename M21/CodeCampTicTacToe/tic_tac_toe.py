@@ -48,8 +48,8 @@ def main():
         if correct_count == 1:
             print(out_put)
         else:
-            print('Invalid game')
+            print('invalid game')
     else:
-        print('Invalid input')
+        print('invalid input')
 if __name__ == '__main__':
     main()
