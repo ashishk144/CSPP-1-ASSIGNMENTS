@@ -23,11 +23,14 @@ def check_cols(matrix_col):
     return 0
 
 def check_matrix(mat_check):
+    count_elem = 0
     for each_list in mat_check:
         # print(each_list)
         for each_element in each_list:
             if each_element == 'x' or each_element == 'o' or each_element == '.':
-                return True
+                count_elem += 1
+    if count_elem == 9:
+        return True
     return False
 
 def main():
