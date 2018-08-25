@@ -13,7 +13,8 @@ def check_sudoku(sudoku):
         Your solution goes here. You may add other helper functions as needed.
         The function has to return True for a valid sudoku grid and false otherwise
     '''
-    print(sudoku)
+    # print(sudoku)
+    print(sudoku[0][0])
     row = []
     for each_row in sudoku:
         row = each_row
