@@ -38,6 +38,7 @@ def check_sudoku(sudoku):
             for i in range(k, k+3):
                 list_2 = []
                 for j in range(k, k+3):
+                    print(sudoku[j][i])
                     list_2.append(sudoku[j][i])
             list_2.sort()
             print(list_2)
