@@ -37,11 +37,11 @@ def check_sudoku(sudoku):
         # while count_ofloops < 3:
         for i in range(k, k+3):
             list_2 = []
-            for l in range(0, 7, 3):
-                for j in range(l, l+3):
+            for col_ran in range(0, 7, 3):
+                for j in range(col_ran, col_ran+3):
                     # print(sudoku[j][i])
                     list_2.append(sudoku[j][i])
-            print(list_2)
+            # print(list_2)
             list_2.sort()
             # print(list_2)
             if ''.join(list_2) != '123456789':
