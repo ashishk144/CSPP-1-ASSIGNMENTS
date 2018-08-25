@@ -5,7 +5,7 @@ each word
 import re
 
 def tokenize(string):
-    reg = re.compile("[^a-z ]")
+    reg = re.compile("[^a-z ,A-Z]")
     token_dict ={}
     line = []
     for each_line in string:
