@@ -10,9 +10,10 @@ def tokenize(string):
     token_dict = {}
     line = []
     for each_line in string:
-        line.append(reg.sub('', each_line))
+        line.append(reg.sub('', each_line).split())
     
     for each_str in line:
+
         for each_word in each_str:
             token_dict[each_word] = token_dict.get(each_word, 0) + 1
     return token_dict
