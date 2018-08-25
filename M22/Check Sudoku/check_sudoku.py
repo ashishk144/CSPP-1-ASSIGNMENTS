@@ -17,7 +17,7 @@ def check_sudoku(sudoku):
     # print(sudoku[0][0])
     row = []
     for each_row in sudoku:
-        row = each_row
+        row = each_row.copy()
         row.sort()
         if ''.join(row) != '123456789':
             return False
