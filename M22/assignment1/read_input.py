@@ -8,7 +8,8 @@ def main():
     num_lines = int(input())
     line = []*num_lines
     for i in range(num_lines):
-        line[i] = input().split('\n')
+        line.append(input())
+    line = line.split('\n')
 
     for each_line in line:
         print(each_line)
