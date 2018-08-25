@@ -11,7 +11,8 @@ def main():
     n = int(input())
     list_1 = []
     for _ in range(n):
-    	list_1.append(input().split())
+    	list_1.append(input())
     print(list_1)
+    # tokenize(list_1)
 if __name__ == '__main__':
     main()
