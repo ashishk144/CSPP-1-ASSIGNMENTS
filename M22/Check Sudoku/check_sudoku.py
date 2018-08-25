@@ -14,13 +14,14 @@ def check_sudoku(sudoku):
         The function has to return True for a valid sudoku grid and false otherwise
     '''
     # print(sudoku)
-    print(sudoku[0][0])
+    # print(sudoku[0][0])
     row = []
     for each_row in sudoku:
         row = each_row
         row.sort()
         if ''.join(row) != '123456789':
             return False
+    print(sudoku)
     for i in range(9):
         list_1 = []
         for j in range(9):
