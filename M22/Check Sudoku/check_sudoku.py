@@ -16,8 +16,8 @@ def check_sudoku(sudoku):
     row = []
     for each_row in sudoku:
         row = each_row
-        print(row)
-        if ''.join(row.sort()) != '123456789':
+        row.sort()
+        if ''.join(row) != '123456789':
             return False
     for i in range(9):
         l=[]
@@ -34,7 +34,7 @@ def main():
         main function to read input sudoku from console
         call check_sudoku function and print the result to console
     '''
-    
+
     # initialize empty list
     sudoku = []
 
