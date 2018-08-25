@@ -35,8 +35,8 @@ def check_sudoku(sudoku):
     for k in range(3, 10, 3):
         count_ofloops = 0
         while count_ofloops < 3:
+            list_2 = []
             for i in range(k, k+3):
-                list_2 = []
                 for j in range(k, k+3):
                     # print(sudoku[j][i])
                     list_2.append(sudoku[j][i])
