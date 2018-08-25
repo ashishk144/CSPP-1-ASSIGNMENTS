@@ -13,7 +13,20 @@ def check_sudoku(sudoku):
         Your solution goes here. You may add other helper functions as needed.
         The function has to return True for a valid sudoku grid and false otherwise
     '''
-    pass
+    row = []
+    for each_row in sudoku:
+        row = each_row
+        if ''.join(row.sort()) != '123456789':
+            return False
+    for i in range(9):
+        l=[]
+        for j in range(9):
+            l.append(sudoku[j][i])
+        if ''.join(l.sort()) != '123456789':
+            return False
+
+    return True
+
 
 def main():
     '''
