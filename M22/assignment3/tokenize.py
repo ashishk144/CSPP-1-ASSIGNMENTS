@@ -4,15 +4,19 @@ each word
 '''
 
 def tokenize(string):
-    reg = re.compile("[^a-z,0-9]")
-    return reg.sub('', string)
-            
+    reg = re.compile("[^a-z]")
+    token_dict ={}
+    line = []
+    for each_line in string:
+    	line.append(reg.sub('', each_line))
+    print(line)
+
 def main():
     n = int(input())
-    list_1 = []
+    list_ofstrs = []
     for _ in range(n):
-    	list_1.append(input())
-    print(list_1)
-    # tokenize(list_1)
+    	list_ofstrs.append(input())
+    # print(list_ofstrs)
+    tokenize(list_ofstrs)
 if __name__ == '__main__':
     main()
