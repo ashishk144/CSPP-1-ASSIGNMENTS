@@ -32,7 +32,7 @@ def check_sudoku(sudoku):
         list_1.sort()
         if ''.join(list_1) != '123456789':
             return False
-    for k in range(3, 10, 3):
+    for k in range(3, 7, 3):
         count_ofloops = 0
         while count_ofloops < 3:
             list_2 = []
