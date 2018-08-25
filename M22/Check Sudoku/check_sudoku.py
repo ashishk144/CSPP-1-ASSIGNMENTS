@@ -26,6 +26,7 @@ def check_sudoku(sudoku):
             print(sudoku[j][i])
             list_1.append(sudoku[j][i])
             # print(list_1)
+        list_1.sort()
         if ''.join(list_1.sort()) != '123456789':
             return False
 
@@ -47,6 +48,7 @@ def main():
         row = input().split(' ')
         sudoku.append(row)
     # call solution function and print result to console
+    print(sudoku)
     print(check_sudoku(sudoku))
 
 if __name__ == '__main__':
