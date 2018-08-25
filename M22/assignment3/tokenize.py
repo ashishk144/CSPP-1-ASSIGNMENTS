@@ -13,8 +13,8 @@ def tokenize(string):
         line.append(reg.sub('', each_line))
     # print(line)
     for each_list in line:
-        for each_word in each_list:
-            token_dict[each_word] = token_dict.get(each_word, 0) + 1
+        # for each_word in each_list:
+        token_dict[each_word] = token_dict.get(each_word, 0) + 1
     return token_dict
 
 def main():
