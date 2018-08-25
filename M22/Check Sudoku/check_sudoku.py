@@ -20,9 +20,10 @@ def check_sudoku(sudoku):
         if ''.join(row) != '123456789':
             return False
     for i in range(9):
-        l=[]
+        list_1 = []
         for j in range(9):
-            l.append(sudoku[j][i])
+            list_1.append(sudoku[j][i])
+            print(list_1)
         if ''.join(l.sort()) != '123456789':
             return False
 
