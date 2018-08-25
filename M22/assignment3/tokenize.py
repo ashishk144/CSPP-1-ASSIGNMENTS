@@ -21,7 +21,7 @@ def main():
     '''Taking inputs and displaying outputs'''
     num_lines = int(input())
     list_ofstrs = []
-    for _ in range(n):
+    for _ in range(num_lines):
         list_ofstrs.append(input())
     # print(list_ofstrs)
     print(tokenize(list_ofstrs))
