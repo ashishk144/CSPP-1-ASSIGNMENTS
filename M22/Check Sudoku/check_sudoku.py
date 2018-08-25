@@ -28,11 +28,19 @@ def check_sudoku(sudoku):
             # print(j,i)
             # print(sudoku[j][i])
             list_1.append(sudoku[j][i])
-            # print(list_1)
+        # print(list_1)
         list_1.sort()
         if ''.join(list_1) != '123456789':
             return False
-
+    for k in range (3,10,3):
+        for i in range(k):
+            list_2 = []
+            for j in range(k):
+                list_2.append(sudoku[j][i])
+            list_2.sort()
+            # print(list_2)
+            if ''.join(list_1) != '123456789':
+                return False
     return True
 
 
@@ -46,7 +54,7 @@ def main():
     sudoku = []
 
     # loop to read 9 lines of input from console
-    for i in range(9):
+    for _ in range(9):
         # read a line, split it on SPACE and append row to list
         row = input().split(' ')
         sudoku.append(row)
