@@ -21,7 +21,7 @@ def check_sudoku(sudoku):
         row.sort()
         if ''.join(row) != '123456789':
             return False
-    print(sudoku)
+    # print(sudoku)
     for i in range(9):
         list_1 = []
         for j in range(9):
