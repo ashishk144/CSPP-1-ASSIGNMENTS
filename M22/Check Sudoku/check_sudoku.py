@@ -17,7 +17,7 @@ def check_sudoku(sudoku):
     for each_row in sudoku:
         row = each_row
         print(row)
-        if ''.join(row.sort()) != '123456789':
+        if ''.join(line_row.sort() for each_val in row) != '123456789':
             return False
     for i in range(9):
         l=[]
