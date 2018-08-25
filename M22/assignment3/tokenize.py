@@ -2,6 +2,7 @@
 Write a function to tokenize a given string and return a dictionary with the frequency of
 each word
 '''
+import re
 
 def tokenize(string):
     reg = re.compile("[^a-z]")
