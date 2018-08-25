@@ -9,7 +9,9 @@ def main():
     line = []*num_lines
     for i in range(num_lines):
         line.append(input())
-    line = line.split('\n')
+
+    print(line)
+    # line = line.split('\n')
 
     for each_line in line:
         print(each_line)
