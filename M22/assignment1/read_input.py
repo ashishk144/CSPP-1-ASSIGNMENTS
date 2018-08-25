@@ -6,7 +6,7 @@ store the input into a string.
 def main():
     '''Defining a function to read multiple lines and display them'''
     num_lines = int(input())
-    line = []
+    line = []*num_lines
     for i in range(num_lines):
         line[i] = input().split('\n')
 
