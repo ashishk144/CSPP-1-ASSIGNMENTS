@@ -40,7 +40,7 @@ def check_sudoku(sudoku):
                 for j in range(k):
                     list_2.append(sudoku[j][i])
                 list_2.sort()
-                # print(list_2)
+                print(list_2)
                 if ''.join(list_2) != '123456789':
                     return False
             count_ofloops += 1
