@@ -6,14 +6,13 @@ import re
 
 def tokenize(string):
     '''Converting given strings to a dictionary with frequencies of each word'''
-    reg = re.compile("[^a-z A-Z]")
+    reg = re.compile("[^a-z A-Z 0-9]")
     token_dict = {}
     line = []
     for each_line in string:
         line.append(reg.sub('', each_line).split())
-    
-    for each_str in line:
 
+    for each_str in line:
         for each_word in each_str:
             token_dict[each_word] = token_dict.get(each_word, 0) + 1
     return token_dict
