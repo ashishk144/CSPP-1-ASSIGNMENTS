@@ -23,11 +23,11 @@ def check_sudoku(sudoku):
         list_1 = []
         for j in range(9):
             # print(j,i)
-            print(sudoku[j][i])
+            # print(sudoku[j][i])
             list_1.append(sudoku[j][i])
             # print(list_1)
         list_1.sort()
-        if ''.join(list_1.sort()) != '123456789':
+        if ''.join(list_1) != '123456789':
             return False
 
     return True
