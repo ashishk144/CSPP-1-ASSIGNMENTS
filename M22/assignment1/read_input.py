@@ -7,11 +7,8 @@ def main():
     '''Defining a function to read multiple lines and display them'''
     num_lines = int(input())
     line = []*num_lines
-    for i in range(num_lines):
+    for _ in range(num_lines):
         line.append(input())
-
-    print(line)
-    # line = line.split('\n')
 
     for each_line in line:
         print(each_line)
