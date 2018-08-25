@@ -44,7 +44,7 @@ def check_sudoku(sudoku):
                 c += 1
             # print(list_2)
             list_2.sort()
-            # print(list_2)
+            print(list_2)
             if ''.join(list_2) != '123456789':
                 return False
             if c < 3 and c==2:
